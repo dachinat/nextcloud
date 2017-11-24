@@ -73,8 +73,8 @@ module Nextcloud
       #   8 delete
       #  16 share, 31 all rights. Value should be one of previously listed.
       # @return [Object] Instance including meta response
-      def create(path, shareType, shareWith, publicUpload = nil, password = nil, permissions = nil)
-        args = local_variables.reduce({}) { |c, i| c[i] = eval(i.to_s); c }
+      def create(path, shareType, shareWith=nil, publicUpload=nil, password=nil, permissions=nil)
+        args = local_variables.reduce({}) { |c, i| c[i] = binding.local_variable_get(i); c }
         response = request(:post, "/shares", args)
         (@meta = get_meta(response)) && self
       end
