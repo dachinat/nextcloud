@@ -1,4 +1,3 @@
-
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "nextcloud/version/nextcloud"
@@ -8,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.version       = Nextcloud::Version::VERSION
   spec.authors       = ["Dachi Natsvlishvili"]
   spec.email         = ["dachinat@gmail.com"]
-
-  spec.summary       = "Nextcloud API wrapper"
-  spec.description   = "Nextcloud OCS and WebDAV API endpoints wrapper in Ruby for user data or sharing capabilities"
+  spec.summary       = "Nextcloud API in Ruby"
+  spec.description   = "Nextcloud OCS and WebDAV API endpoints wrapper in Ruby for user provisioning, file and directory
+                        management, sharing (including Federated Cloud Sharing), group and application operations."
   spec.homepage      = "https://github.com/dachinat/nextcloud"
   spec.license       = "MIT"
 
@@ -27,7 +26,6 @@ Gem::Specification.new do |spec|
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
-
 
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }

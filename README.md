@@ -1,6 +1,6 @@
 [![Gem](https://img.shields.io/gem/v/nextcloud.svg?style=flat-square)](https://rubygems.org/gems/nextcloud)
 
-# Nextcloud Ruby SDK
+# Nextcloud Ruby API
 
 Wrapper gem for Ruby used for communicating with Nextcloud OCS and WebDAV API endpoints.
 
