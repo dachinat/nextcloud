@@ -1,0 +1,288 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://cloud.testdomain.com/ocs/v2.php/cloud/apps/user_ldap
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic c3VwcG9ydDplZVAyakM3TENwUW4=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 02:46:18 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Content-Length:
+      - '138'
+      Connection:
+      - keep-alive
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 03:46:18 GMT; Max-Age=3600
+      - oc_sessionPassphrase=8C47lN4kHr%2BrCnTLKuouxWlNduMRf2m2XBbd11ubeBNlG3G3Qd4upGPbjS3i2BY6GcILHQkZOyoecChAVmGTWnjXtXXbopy%2FBVVCAODhj2%2BoJCmLCskCuVgare0r51sI;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=e59755e4a82ffa02835425fbcd1c8224; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data/>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 02:46:18 GMT
+- request:
+    method: get
+    uri: https://cloud.testdomain.com/ocs/v2.php/cloud/apps?filter=disabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic c3VwcG9ydDplZVAyakM3TENwUW4=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 02:46:49 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 03:46:49 GMT; Max-Age=3600
+      - oc_sessionPassphrase=41pvl7subUcifIPTyjldgNgAgYeUw8r%2BBPxd0MDGd8l3T%2Fj14x2kYnEi12%2F%2BFJJlpraRHkVYCraV2SY8aip8dr1iqtzUAYzftrcpuCfmPRJcYUlOfEja7vxrEG112ddn;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=40733689c03f1f130283b898704c5e31; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data>
+          <apps>
+           <element>files_external</element>
+           <element>admin_audit</element>
+           <element>user_external</element>
+           <element>user_ldap</element>
+          </apps>
+         </data>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 02:46:49 GMT
+- request:
+    method: get
+    uri: https://cloud.testdomain.com/ocs/v2.php/cloud/apps?filter=enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic c3VwcG9ydDplZVAyakM3TENwUW4=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 02:47:19 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 03:47:19 GMT; Max-Age=3600
+      - oc_sessionPassphrase=HX1QUR8WkUIEpLNrq2Mo2HoSC30Qe89q0ai6ez%2BLVumDU5WOshirD7XPRq1mezMHLV4H1bMdEajn8uR4TcPdSjsQS7IxtnE7WVJMY17XWM0BNOtt2Rn%2F%2BCZAp9SL5CYS;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=83b0cfd5c6314101242c5a0643c8d7e3; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data>
+          <apps>
+           <element>files</element>
+           <element>activity</element>
+           <element>admin_notifications</element>
+           <element>comments</element>
+           <element>dav</element>
+           <element>encryption</element>
+           <element>external</element>
+           <element>federatedfilesharing</element>
+           <element>federation</element>
+           <element>files_pdfviewer</element>
+           <element>files_sharing</element>
+           <element>files_texteditor</element>
+           <element>files_trashbin</element>
+           <element>files_versions</element>
+           <element>files_videoplayer</element>
+           <element>firstrunwizard</element>
+           <element>gallery</element>
+           <element>logreader</element>
+           <element>lookup_server_connector</element>
+           <element>nextcloud_announcements</element>
+           <element>notifications</element>
+           <element>oauth2</element>
+           <element>password_policy</element>
+           <element>provisioning_api</element>
+           <element>quota_warning</element>
+           <element>serverinfo</element>
+           <element>sharebymail</element>
+           <element>survey_client</element>
+           <element>systemtags</element>
+           <element>theming</element>
+           <element>twofactor_backupcodes</element>
+           <element>unsplash</element>
+           <element>updatenotification</element>
+           <element>workflowengine</element>
+          </apps>
+         </data>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 02:47:19 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: proppatch
+    uri: https://cloud.testdomain.com/remote.php/dav/files/testuser/upload.txt
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0"?>
+              <d:propertyupdate xmlns:d="DAV:" xmlns:oc="http://owncloud.org/ns">
+                <d:set>
+                  <d:prop>
+                    <oc:favorite>0</oc:favorite>
+                  </d:prop>
+                </d:set>
+              </d:propertyupdate>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic ZGFjaGk6ZDE5ODkxMTlP
+  response:
+    status:
+      code: 207
+      message: Multi-Status
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 24 Nov 2017 18:00:36 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Fri, 24-Nov-2017 19:00:36 GMT; Max-Age=3600
+      - oc_sessionPassphrase=ksIubqWYoud1cML0TA2Zh1aGCA4jCGjCTOQhSD%2BNjw4tZ9XSdeHwCzjyX7Voi3slV8HJOX8BsABeRuizsDEggjhTjQhdV23QyYv%2BCDpFh%2FpsEiB8wC0W0%2B0YZaBWdn5Q;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=b9a0c638dafa1731aa3b3ecdbe44f3e4; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - default-src 'none';
+      Vary:
+      - Brief,Prefer
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0"?>
+        <d:multistatus xmlns:d="DAV:" xmlns:s="http://sabredav.org/ns" xmlns:cal="urn:ietf:params:xml:ns:caldav" xmlns:cs="http://calendarserver.org/ns/" xmlns:card="urn:ietf:params:xml:ns:carddav" xmlns:oc="http://owncloud.org/ns" xmlns:nc="http://nextcloud.org/ns"><d:response><d:href>/remote.php/dav/files/testuser/upload.txt</d:href><d:propstat><d:prop><oc:favorite/></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response></d:multistatus>
+    http_version: 
+  recorded_at: Fri, 24 Nov 2017 18:00:36 GMT
+recorded_with: VCR 3.0.3

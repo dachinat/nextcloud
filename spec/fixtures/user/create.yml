@@ -1,0 +1,175 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cloud.testdomain.com/ocs/v2.php/cloud/users
+    body:
+      encoding: US-ASCII
+      string: userid=user1&password=new_user_Password1
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic c3VwcG9ydDplZVAyakM3TENwUW4=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 01:32:24 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Content-Length:
+      - '138'
+      Connection:
+      - keep-alive
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 02:32:22 GMT; Max-Age=3600
+      - oc_sessionPassphrase=eVS5zePezY58nVSReuS7hRvYYaL1TZWIa9UG4yk56Nv6cokHhCFkLh8WjEkh86DDNIcCYb4bQCJnU0rB2PoV%2BV4YABUf2jEMgm%2FJOUmOXXORMHpGvOn0kS0ETPrPeTPr;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=744a7f3834dd15eb7a3f247e5cc8679a; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data/>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 01:32:24 GMT
+- request:
+    method: get
+    uri: https://cloud.testdomain.com/ocs/v2.php/cloud/users/user1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic c3VwcG9ydDplZVAyakM3TENwUW4=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 01:32:54 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 02:32:54 GMT; Max-Age=3600
+      - oc_sessionPassphrase=GHN8oyGpwqSPq%2Fapb8YYsFAKGqpPklKD5z96A2abh3VwaZAulgP8pe41S6tfVq6AQhwr4G4cykeX0oD8bhkz9b9il2q1qC5fqYsmVwWSZFT47mzfDi%2BOBqDoqOQlJvyR;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=bad2a13d174034651229d45936177ec4; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data>
+          <enabled>true</enabled>
+          <id>user1</id>
+          <quota/>
+          <email/>
+          <displayname>user1</displayname>
+          <phone></phone>
+          <address></address>
+          <website></website>
+          <twitter></twitter>
+          <groups/>
+          <language></language>
+         </data>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 01:32:54 GMT
+recorded_with: VCR 3.0.3

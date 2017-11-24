@@ -1,0 +1,149 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://cloud.testdomain.com/ocs/v2.php/cloud/users/user1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic c3VwcG9ydDplZVAyakM3TENwUW4=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 01:44:53 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Content-Length:
+      - '138'
+      Connection:
+      - keep-alive
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 02:44:53 GMT; Max-Age=3600
+      - oc_sessionPassphrase=PejUVmVP8kHCc9YACZIv3Tx9UHvWLaWmngLkqSA5sYms5IapOu1MDmE3rerPvc%2BFaR6TV%2FH4LDCMrIwvjQgbbuRtdoXjvQX4sJd61QIX62zN6WaZcoZ0oXXmT%2Fwvmyay;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=d7ca1c2e46899f8cbf3f3551361d770d; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data/>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 01:44:53 GMT
+- request:
+    method: get
+    uri: https://cloud.testdomain.com/ocs/v2.php/cloud/users/user1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic c3VwcG9ydDplZVAyakM3TENwUW4=
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 01:45:24 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Content-Length:
+      - '178'
+      Connection:
+      - keep-alive
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 02:45:24 GMT; Max-Age=3600
+      - oc_sessionPassphrase=2nNiBf79r7ONoyKRdeHaU7bUvQfpzbMlWKOz8nhQ6UvIqwVSE%2BU78KPIL%2BhZxUvlQamCoB6tT%2FESbg94Nuiyt%2BMtUuYaybBuqHMHBP2U1W8q1X6t2Ln8zcG0P1m5iirm;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=39d5e59c5f67453cc363bb00fabda494; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>failure</status>
+          <statuscode>998</statuscode>
+          <message>The requested user could not be found</message>
+         </meta>
+         <data/>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 01:45:24 GMT
+recorded_with: VCR 3.0.3

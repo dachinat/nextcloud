@@ -1,0 +1,196 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cloud.testdomain.com/ocs/v2.php/apps/files_sharing/api/v1//remote_shares/pending/7
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic dGVzdDI6ZEFjaGkxOTg5MTE5TyE=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 04:35:05 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Content-Length:
+      - '138'
+      Connection:
+      - keep-alive
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 05:35:05 GMT; Max-Age=3600
+      - oc_sessionPassphrase=9RwCathQBYuOn7Ep3TEe7go2QchNEWKiysI8ZdXlGzb8JmLtmcVJFKAh2AMMO4OhsmUJaqNKLqeE53nCSAz%2FFatkhmBCG545ZXfa%2BURNpFwTdOB6SP6TMQ8q4b4GocI%2B;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=cc4e5697a294af2ce4776ab4c1f9a327; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data/>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 04:35:05 GMT
+- request:
+    method: get
+    uri: https://cloud.testdomain.com/ocs/v2.php/apps/files_sharing/api/v1//remote_shares
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic dGVzdDI6ZEFjaGkxOTg5MTE5TyE=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 04:35:09 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 05:35:09 GMT; Max-Age=3600
+      - oc_sessionPassphrase=J3aVZbhXgP0rQtL3rv0QLtkNXhAg2Xbe0f4cLL%2Fy4v%2FWDDuu1mRXoSrTY0ozZvQYhoPO4Nw0DN26xvTuEp4cON6R0OMNIbGT7iL0h0D2xIwBEqC4mdnRGTdF5L%2BjK%2BOd;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=c8a1b399a3a99d95af07e878c44ab623; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data>
+          <element>
+           <id>7</id>
+           <remote>https://cloud.testdomain.com/</remote>
+           <remote_id>74</remote_id>
+           <share_token>SUpfYusFbAx0J42</share_token>
+           <name>/federated1.txt</name>
+           <owner>test1</owner>
+           <user>test2</user>
+           <mountpoint>/federated1.txt</mountpoint>
+           <accepted>1</accepted>
+           <mimetype>text/plain</mimetype>
+           <mtime>1511238614</mtime>
+           <permissions>27</permissions>
+           <type>file</type>
+           <file_id>5331</file_id>
+          </element>
+          <element>
+           <id>8</id>
+           <remote>https://cloud.testdomain.com/</remote>
+           <remote_id>75</remote_id>
+           <share_token>McHUSYnoyVHBNeJ</share_token>
+           <name>/federated2.txt</name>
+           <owner>test1</owner>
+           <user>test2</user>
+           <mountpoint>/federated2.txt</mountpoint>
+           <accepted>1</accepted>
+           <mimetype>text/plain</mimetype>
+           <mtime>1511238654</mtime>
+           <permissions>27</permissions>
+           <type>file</type>
+           <file_id>5330</file_id>
+          </element>
+         </data>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 04:35:09 GMT
+recorded_with: VCR 3.0.3

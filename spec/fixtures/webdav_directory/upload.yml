@@ -1,0 +1,157 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://cloud.testdomain.com/remote.php/dav/files/testuser/upload.txt
+    body:
+      encoding: UTF-8
+      string: Uploaded file
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic ZGFjaGk6ZDE5ODkxMTlP
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 24 Nov 2017 17:56:48 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Fri, 24-Nov-2017 18:56:48 GMT; Max-Age=3600
+      - oc_sessionPassphrase=V3QzoNLhNubEl%2B8C1vrwLeEGq0Bt5SGR2Xkld%2BDcX8npADsA4e55Bomf0Da9WD2f1YTDEa2KO6WAdDDQa05wd1xkbHzuIfyLVNKkBbd8%2FfQRmFrdwf7R43TVux4Y2EHH;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=7d7217d6d23b3324059249363a5c204f; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - default-src 'none';
+      Oc-Fileid:
+      - '00005683ocny5rihhfu4'
+      Etag:
+      - '"88c9a7ea2dbe7ebadecc6bc876716f98"'
+      Oc-Etag:
+      - '"88c9a7ea2dbe7ebadecc6bc876716f98"'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Fri, 24 Nov 2017 17:56:48 GMT
+- request:
+    method: get
+    uri: https://cloud.testdomain.com/remote.php/dav/files/testuser/upload.txt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic ZGFjaGk6ZDE5ODkxMTlP
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 24 Nov 2017 17:56:49 GMT
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Content-Length:
+      - '13'
+      Connection:
+      - keep-alive
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Fri, 24-Nov-2017 18:56:49 GMT; Max-Age=3600
+      - oc_sessionPassphrase=o85aET%2FHGfRAdTD74Y8nTtHwwQRf8N0Kh11Cd2nHRDURf67gsCmuvSKRS%2FBk1pY8YTz6FOzEPXE%2FM4GECyKaajhFu3JKVYI9qUu4uPlkIJHHr%2B2bGcZLB2ZrztAZCvmc;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=7602d98ddb3846cda7fd7fa0ad9147d1; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - default-src 'none';
+      Last-Modified:
+      - Fri, 24 Nov 2017 17:56:48 GMT
+      Etag:
+      - '"88c9a7ea2dbe7ebadecc6bc876716f98"'
+      Content-Disposition:
+      - attachment; filename*=UTF-8''upload.txt; filename="upload.txt"
+      Oc-Etag:
+      - '"88c9a7ea2dbe7ebadecc6bc876716f98"'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: Uploaded file
+    http_version: 
+  recorded_at: Fri, 24 Nov 2017 17:56:49 GMT
+recorded_with: VCR 3.0.3

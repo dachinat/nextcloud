@@ -1,0 +1,325 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloud.testdomain.com/ocs/v2.php/apps/files_sharing/api/v1/shares/72
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic dGVzdDI6ZEFjaGkxOTg5MTE5TyE=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 04:26:26 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 05:26:26 GMT; Max-Age=3600
+      - oc_sessionPassphrase=wVi9LAEoFjHUWFBXw%2FJ1gmX5NzDl%2FScaAcno0bTb14qVfV1QTdHV3OIBmZqyG1dJFhsiZYHS%2FJpG1OWy98wrs26fpCgZf5uyzlLRSu5lufHZMvIsxlUtOW7rvpRSGkXT;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=31034885aee22674503caeafa0b424a5; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data>
+          <element>
+           <id>72</id>
+           <share_type>3</share_type>
+           <uid_owner>test2</uid_owner>
+           <displayname_owner>test2</displayname_owner>
+           <permissions>15</permissions>
+           <stime>1511238070</stime>
+           <parent/>
+           <expiration>2017-11-26 00:00:00</expiration>
+           <token>tQb9EqZN66XkPqL</token>
+           <uid_file_owner>test2</uid_file_owner>
+           <displayname_file_owner>test2</displayname_file_owner>
+           <path>/folder2</path>
+           <item_type>folder</item_type>
+           <mimetype>httpd/unix-directory</mimetype>
+           <storage_id>home::test2</storage_id>
+           <storage>61</storage>
+           <item_source>5303</item_source>
+           <file_source>5303</file_source>
+           <file_parent>5028</file_parent>
+           <file_target>/folder2</file_target>
+           <share_with/>
+           <share_with_displayname/>
+           <url>https://cloud.testdomain.com/s/tQb9EqZN66XkPqL</url>
+           <mail_send>0</mail_send>
+          </element>
+         </data>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 04:26:26 GMT
+- request:
+    method: put
+    uri: https://cloud.testdomain.com/ocs/v2.php/apps/files_sharing/api/v1//shares/72
+    body:
+      encoding: US-ASCII
+      string: expireDate=2017-11-22
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic dGVzdDI6ZEFjaGkxOTg5MTE5TyE=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 04:26:29 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 05:26:29 GMT; Max-Age=3600
+      - oc_sessionPassphrase=HObueCZLXClvVAxlIMvFZLRuI6dSBuoFlEzgFZH%2BlHpvQ6K1wLEBzi70eJQXkOz%2Bqx8q4Jcxbx8Fm0Gx7RNSxsLhlg1HL6KQTPsOQHYBFRlPssBibcCxHZH1EExJWZPJ;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=0d5e52516f6d5b04d8b0121968b544a3; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data>
+          <id>72</id>
+          <share_type>3</share_type>
+          <uid_owner>test2</uid_owner>
+          <displayname_owner>test2</displayname_owner>
+          <permissions>15</permissions>
+          <stime>1511238070</stime>
+          <parent/>
+          <expiration>2017-11-22 00:00:00</expiration>
+          <token>tQb9EqZN66XkPqL</token>
+          <uid_file_owner>test2</uid_file_owner>
+          <displayname_file_owner>test2</displayname_file_owner>
+          <path>/folder2</path>
+          <item_type>folder</item_type>
+          <mimetype>httpd/unix-directory</mimetype>
+          <storage_id>home::test2</storage_id>
+          <storage>61</storage>
+          <item_source>5303</item_source>
+          <file_source>5303</file_source>
+          <file_parent>5028</file_parent>
+          <file_target>/folder2</file_target>
+          <share_with/>
+          <share_with_displayname/>
+          <url>https://cloud.testdomain.com/s/tQb9EqZN66XkPqL</url>
+          <mail_send>0</mail_send>
+         </data>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 04:26:29 GMT
+- request:
+    method: get
+    uri: https://cloud.testdomain.com/ocs/v2.php/apps/files_sharing/api/v1/shares/72
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic dGVzdDI6ZEFjaGkxOTg5MTE5TyE=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 04:26:33 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 05:26:33 GMT; Max-Age=3600
+      - oc_sessionPassphrase=9G4Rwm%2Fra2J0Csfn30KsewE0xa9%2FFHC1QyO5egZl1yK1%2F1GpBdVUvtHTVwHuuTuoTC4tXp3xfxqmLDjigVmvcUD44vt0jhsp7PEx3Y4qhq4lH%2BuAZUt%2FkBsgMsmeNHLx;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=a3be42b6f5d914202bed51045b6f9ba6; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data>
+          <element>
+           <id>72</id>
+           <share_type>3</share_type>
+           <uid_owner>test2</uid_owner>
+           <displayname_owner>test2</displayname_owner>
+           <permissions>15</permissions>
+           <stime>1511238070</stime>
+           <parent/>
+           <expiration>2017-11-22 00:00:00</expiration>
+           <token>tQb9EqZN66XkPqL</token>
+           <uid_file_owner>test2</uid_file_owner>
+           <displayname_file_owner>test2</displayname_file_owner>
+           <path>/folder2</path>
+           <item_type>folder</item_type>
+           <mimetype>httpd/unix-directory</mimetype>
+           <storage_id>home::test2</storage_id>
+           <storage>61</storage>
+           <item_source>5303</item_source>
+           <file_source>5303</file_source>
+           <file_parent>5028</file_parent>
+           <file_target>/folder2</file_target>
+           <share_with/>
+           <share_with_displayname/>
+           <url>https://cloud.testdomain.com/s/tQb9EqZN66XkPqL</url>
+           <mail_send>0</mail_send>
+          </element>
+         </data>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 04:26:33 GMT
+recorded_with: VCR 3.0.3

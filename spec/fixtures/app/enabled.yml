@@ -1,0 +1,121 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloud.testdomain.com/ocs/v2.php/cloud/apps?filter=enabled
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic c3VwcG9ydDplZVAyakM3TENwUW4=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 02:40:23 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 03:40:23 GMT; Max-Age=3600
+      - oc_sessionPassphrase=lJb6CKkASOJ9Ha0U6XugpvA74gbHK2z%2BQEsRj%2BdC968U75K5RGDKxeU99%2BsFrJ7M%2FJMH6fKSAtyH8vQsEZvW1%2FKWhn5Jovx9o8iHni%2FbI1s%2BD2GdU%2BTMrcGakdUxpb26;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=4d954bb921b5a7f4376a5e62b4f42109; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data>
+          <apps>
+           <element>files</element>
+           <element>activity</element>
+           <element>admin_notifications</element>
+           <element>comments</element>
+           <element>dav</element>
+           <element>encryption</element>
+           <element>external</element>
+           <element>federatedfilesharing</element>
+           <element>federation</element>
+           <element>files_pdfviewer</element>
+           <element>files_sharing</element>
+           <element>files_texteditor</element>
+           <element>files_trashbin</element>
+           <element>files_versions</element>
+           <element>files_videoplayer</element>
+           <element>firstrunwizard</element>
+           <element>gallery</element>
+           <element>logreader</element>
+           <element>lookup_server_connector</element>
+           <element>nextcloud_announcements</element>
+           <element>notifications</element>
+           <element>oauth2</element>
+           <element>password_policy</element>
+           <element>provisioning_api</element>
+           <element>quota_warning</element>
+           <element>serverinfo</element>
+           <element>sharebymail</element>
+           <element>survey_client</element>
+           <element>systemtags</element>
+           <element>theming</element>
+           <element>twofactor_backupcodes</element>
+           <element>unsplash</element>
+           <element>updatenotification</element>
+           <element>workflowengine</element>
+          </apps>
+         </data>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 02:40:24 GMT
+recorded_with: VCR 3.0.3

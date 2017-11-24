@@ -1,0 +1,355 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://cloud.testdomain.com/ocs/v2.php/apps/files_sharing/api/v1//shares
+    body:
+      encoding: US-ASCII
+      string: path=%2Fsome_file2.txt&shareType=3&shareWith&publicUpload&password=somePassword1_&permissions&args&response
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic dGVzdDI6ZEFjaGkxOTg5MTE5TyE=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 04:00:10 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 05:00:10 GMT; Max-Age=3600
+      - oc_sessionPassphrase=ASEjq9fIg15VqhwlIqh9GqOErGWEpM0Z6wQPJdWC01xOVc3%2F08LlkwF%2FgsJYTGjo6J1ZxNSu5t7FNmjolTUasYULD%2FMzjrUm%2FS1m9B8Sxz2Gl5oz%2BOzS%2FBsQRMLDL0nv;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=39a02f46126107d99a68eb6cbbc828df; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data>
+          <id>65</id>
+          <share_type>3</share_type>
+          <uid_owner>test2</uid_owner>
+          <displayname_owner>test2</displayname_owner>
+          <permissions>1</permissions>
+          <stime>1511236810</stime>
+          <parent/>
+          <expiration>2017-11-26 00:00:00</expiration>
+          <token>ShXdLVSmHvDF3kS</token>
+          <uid_file_owner>test2</uid_file_owner>
+          <displayname_file_owner>test2</displayname_file_owner>
+          <path>/some_file2.txt</path>
+          <item_type>file</item_type>
+          <mimetype>text/plain</mimetype>
+          <storage_id>home::test2</storage_id>
+          <storage>61</storage>
+          <item_source>5235</item_source>
+          <file_source>5235</file_source>
+          <file_parent>5028</file_parent>
+          <file_target>/some_file2.txt</file_target>
+          <share_with>1|$2y$10$/vlueWA/1JT2EfYmBoKx..amqxEPKjPmwduK//whmN9hEHB7kNCyO</share_with>
+          <share_with_displayname>1|$2y$10$/vlueWA/1JT2EfYmBoKx..amqxEPKjPmwduK//whmN9hEHB7kNCyO</share_with_displayname>
+          <url>https://cloud.testdomain.com/s/ShXdLVSmHvDF3kS</url>
+          <mail_send>0</mail_send>
+         </data>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 04:00:10 GMT
+- request:
+    method: get
+    uri: https://cloud.testdomain.com/ocs/v2.php/apps/files_sharing/api/v1/shares?path=/some_file2.txt&reshares=&subfiles=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic dGVzdDI6ZEFjaGkxOTg5MTE5TyE=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 04:00:13 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 05:00:13 GMT; Max-Age=3600
+      - oc_sessionPassphrase=H5HYRch9d5xKCZA5OVEtrg%2BzSZZDw%2BCHoukkK5vBuMA94s1hqfOaul%2FVELEQkAulw%2FJTlQlMe1yJhRRUITjnvD8mPCmqGZX7ANn0%2FxeXa7gWIfG4VpjAkoM9SDua2%2FmL;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=c7ce87386222eb221feaa67308aef909; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data>
+          <element>
+           <id>65</id>
+           <share_type>3</share_type>
+           <uid_owner>test2</uid_owner>
+           <displayname_owner>test2</displayname_owner>
+           <permissions>1</permissions>
+           <stime>1511236810</stime>
+           <parent/>
+           <expiration>2017-11-26 00:00:00</expiration>
+           <token>ShXdLVSmHvDF3kS</token>
+           <uid_file_owner>test2</uid_file_owner>
+           <displayname_file_owner>test2</displayname_file_owner>
+           <path>/some_file2.txt</path>
+           <item_type>file</item_type>
+           <mimetype>text/plain</mimetype>
+           <storage_id>home::test2</storage_id>
+           <storage>61</storage>
+           <item_source>5235</item_source>
+           <file_source>5235</file_source>
+           <file_parent>5028</file_parent>
+           <file_target>/some_file2.txt</file_target>
+           <share_with>1|$2y$10$/vlueWA/1JT2EfYmBoKx..amqxEPKjPmwduK//whmN9hEHB7kNCyO</share_with>
+           <share_with_displayname>1|$2y$10$/vlueWA/1JT2EfYmBoKx..amqxEPKjPmwduK//whmN9hEHB7kNCyO</share_with_displayname>
+           <url>https://cloud.testdomain.com/s/ShXdLVSmHvDF3kS</url>
+           <mail_send>0</mail_send>
+           <tags/>
+          </element>
+         </data>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 04:00:14 GMT
+- request:
+    method: get
+    uri: https://cloud.testdomain.com/s/ShXdLVSmHvDF3kS
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 303
+      message: See Other
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 04:00:14 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - oc_sessionPassphrase=rHgWKXm34lObOIv%2B0TFkX4NS9qriwXW0s2A6NV1WCfvMd3il%2FcVUVlCX1XLVfxUe81Wh0ort0kiLvyEkDhf8HhdXUR%2F1ct8A49xLpxVnuYB6st6F3hrvAcnXfPjUse6G;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=26dc0800aac3197f8da3aa3fa69d6292; path=/; HttpOnly
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Location:
+      - "/s/ShXdLVSmHvDF3kS/authenticate"
+      Content-Security-Policy:
+      - 'default-src ''none'';base-uri ''none'';manifest-src ''self'';script-src ''self''
+        ''unsafe-eval'';style-src ''self'' ''unsafe-inline'';img-src ''self'' data:
+        blob: https://source.unsplash.com https://images.unsplash.com;font-src ''self'';connect-src
+        ''self'';media-src ''self'''
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 04:00:14 GMT
+- request:
+    method: get
+    uri: https://cloud.testdomain.com/s/ShXdLVSmHvDF3kS/authenticate
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 04:00:14 GMT
+      Content-Type:
+      - text/html; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - oc_sessionPassphrase=BoUWFyX72OmHY31SgKEkZN4r1yEdnfBFIQaVqoq8voRacJWjEQQ2CVP007jCWybZRHCYUeA%2FYkE1jmJEr%2BvVhBgF7DP0EKIFEjF3%2FZ2186yaN3F34wfyPAOirAdRAKi2;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=19ad0d5431a38c96dac7bb1be6266402; path=/; HttpOnly
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - 'default-src ''none'';base-uri ''none'';manifest-src ''self'';script-src ''self''
+        ''unsafe-eval'';style-src ''self'' ''unsafe-inline'';img-src ''self'' data:
+        blob: https://source.unsplash.com https://images.unsplash.com;font-src ''self'';connect-src
+        ''self'';media-src ''self'''
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PCFET0NUWVBFIGh0bWw+CjxodG1sIGNsYXNzPSJuZy1jc3AiIGRhdGEtcGxhY2Vob2xkZXItZm9jdXM9ImZhbHNlIiBsYW5nPSJlbiIgPgoJPGhlYWQgZGF0YS1yZXF1ZXN0dG9rZW49InlRdDF4eUhxTU1wVHlLSmxZZm5WWE52U0cvUCtEblVmVTBUdE5HM25mbE09OmoyRUg4WFNtUXI0Ym9mSUVENVNXTXVqamNacThhUkpsSkIyMGJWMmZWUmc9Ij4KCQk8bWV0YSBjaGFyc2V0PSJ1dGYtOCI+CgkJPHRpdGxlPgoJCVNhdmVkLmdlCQk8L3RpdGxlPgoJCTxtZXRhIGh0dHAtZXF1aXY9IlgtVUEtQ29tcGF0aWJsZSIgY29udGVudD0iSUU9ZWRnZSI+CgkJPG1ldGEgbmFtZT0icmVmZXJyZXIiIGNvbnRlbnQ9Im5ldmVyIj4KCQk8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBtaW5pbXVtLXNjYWxlPTEuMCwgbWF4aW11bS1zY2FsZT0xLjAiPgoJCTxtZXRhIG5hbWU9ImFwcGxlLWl0dW5lcy1hcHAiIGNvbnRlbnQ9ImFwcC1pZD0xMTI1NDIwMTAyIj4KCQk8bWV0YSBuYW1lPSJ0aGVtZS1jb2xvciIgY29udGVudD0iIzAwODBmZSI+CgkJPGxpbmsgcmVsPSJpY29uIiBocmVmPSIvYXBwcy90aGVtaW5nL2Zhdmljb24/dj0xOSI+CgkJPGxpbmsgcmVsPSJhcHBsZS10b3VjaC1pY29uLXByZWNvbXBvc2VkIiBocmVmPSIvYXBwcy90aGVtaW5nL2ljb24/dj0xOSI+CgkJPGxpbmsgcmVsPSJtYXNrLWljb24iIHNpemVzPSJhbnkiIGhyZWY9Ii9jb3JlL2ltZy9mYXZpY29uLW1hc2suc3ZnIiBjb2xvcj0iIzAwODBmZSI+CgkJCQkJCQk8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Ii9jb3JlL3ZlbmRvci9zZWxlY3QyL3NlbGVjdDIuY3NzP3Y9MmE3NTg0ZWI5ZGI1MjE3Nzg3ZTk0OTA3ZDA1NjljZGUtMTkiPgoJCQkJCTxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iL2Nzcy9jb3JlLzQ3OWNmOWU3NmM4YzRkNzhiOWFkYjEwOThjZGU1MTU3LXNlcnZlci5jc3M/dj0yYTc1ODRlYjlkYjUyMTc3ODdlOTQ5MDdkMDU2OWNkZS0xOSI+CgkJCQkJPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSIvY29yZS92ZW5kb3IvanF1ZXJ5LXVpL3RoZW1lcy9iYXNlL2pxdWVyeS11aS5jc3M/dj0yYTc1ODRlYjlkYjUyMTc3ODdlOTQ5MDdkMDU2OWNkZS0xOSI+CgkJCQkJPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSIvY29yZS9jc3MvanF1ZXJ5LXVpLWZpeGVzLmNzcz92PTJhNzU4NGViOWRiNTIxNzc4N2U5NDkwN2QwNTY5Y2RlLTE5Ij4KCQkJCQk8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Ii9hcHBzL3Vuc3BsYXNoL2Nzcy9sb2dpbi5jc3M/dj0yYTc1ODRlYjlkYjUyMTc3ODdlOTQ5MDdkMDU2OWNkZS0xOSI+CgkJCQkJPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSIvY3NzL2NvcmUvNDc5Y2Y5ZTc2YzhjNGQ3OGI5YWRiMTA5OGNkZTUxNTctc2hhcmUuY3NzP3Y9MmE3NTg0ZWI5ZGI1MjE3Nzg3ZTk0OTA3ZDA1NjljZGUtMTkiPgoJCQkJCTxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iL2FwcHMvZmlsZXNfdmVyc2lvbnMvY3NzL3ZlcnNpb25zLmNzcz92PTJhNzU4NGViOWRiNTIxNzc4N2U5NDkwN2QwNTY5Y2RlLTE5Ij4KCQkJCQk8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Ii9hcHBzL2ZpbGVzX3BkZnZpZXdlci9jc3Mvc3R5bGUuY3NzP3Y9MmE3NTg0ZWI5ZGI1MjE3Nzg3ZTk0OTA3ZDA1NjljZGUtMTkiPgoJCQkJCTxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iL2FwcHMvZmlsZXNfdmlkZW9wbGF5ZXIvY3NzL3N0eWxlLmNzcz92PTJhNzU4NGViOWRiNTIxNzc4N2U5NDkwN2QwNTY5Y2RlLTE5Ij4KCQkJCQk8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Ii9jb3JlL2Nzcy9qcXVlcnkub2NkaWFsb2cuY3NzP3Y9MmE3NTg0ZWI5ZGI1MjE3Nzg3ZTk0OTA3ZDA1NjljZGUtMTkiPgoJCQkJCTxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iL2FwcHMvZmlsZXNfc2hhcmluZy9jc3MvYXV0aGVudGljYXRlLmNzcz92PTJhNzU4NGViOWRiNTIxNzc4N2U5NDkwN2QwNTY5Y2RlLTE5Ij4KCQkJCQkJCQkJPHNjcmlwdCBub25jZT0iZVZGME1YaDVTSEZOVFhCVWVVdEtiRmxtYmxaWVRuWlRSeTlRSzBSdVZXWlZNRlIwVGtjemJtWnNUVDA2YWpKRlNEaFlVMjFSY2pSaWIyWkpSVVExVTFkTmRXcHFZMXB4T0dGU1NteEtRakl3WWxZeVpsWlNaejA9IiBzcmM9Ii9jb3JlL2pzL29jLmpzP3Y9MmE3NTg0ZWI5ZGI1MjE3Nzg3ZTk0OTA3ZDA1NjljZGUiPjwvc2NyaXB0PgoJCQkJCTxzY3JpcHQgbm9uY2U9ImVWRjBNWGg1U0hGTlRYQlVlVXRLYkZsbWJsWllUblpUUnk5UUswUnVWV1pWTUZSMFRrY3pibVpzVFQwNmFqSkZTRGhZVTIxUmNqUmliMlpKUlVRMVUxZE5kV3BxWTFweE9HRlNTbXhLUWpJd1lsWXlabFpTWnowPSIgc3JjPSIvY29yZS92ZW5kb3IvY29yZS5qcz92PTJhNzU4NGViOWRiNTIxNzc4N2U5NDkwN2QwNTY5Y2RlLTE5Ij48L3NjcmlwdD4KCQkJCQk8c2NyaXB0IG5vbmNlPSJlVkYwTVhoNVNIRk5UWEJVZVV0S2JGbG1ibFpZVG5aVFJ5OVFLMFJ1VldaVk1GUjBUa2N6Ym1ac1RUMDZhakpGU0RoWVUyMVJjalJpYjJaSlJVUTFVMWROZFdwcVkxcHhPR0ZTU214S1FqSXdZbFl5WmxaU1p6MD0iIHNyYz0iL2pzL2NvcmUvbWVyZ2VkLXRlbXBsYXRlLXByZXBlbmQuanM/dj0yYTc1ODRlYjlkYjUyMTc3ODdlOTQ5MDdkMDU2OWNkZS0xOSI+PC9zY3JpcHQ+CgkJCQkJPHNjcmlwdCBub25jZT0iZVZGME1YaDVTSEZOVFhCVWVVdEtiRmxtYmxaWVRuWlRSeTlRSzBSdVZXWlZNRlIwVGtjemJtWnNUVDA2YWpKRlNEaFlVMjFSY2pSaWIyWkpSVVExVTFkTmRXcHFZMXB4T0dGU1NteEtRakl3WWxZeVpsWlNaejA9IiBzcmM9Ii9jb3JlL3NlYXJjaC9qcy9zZWFyY2guanM/dj0yYTc1ODRlYjlkYjUyMTc3ODdlOTQ5MDdkMDU2OWNkZS0xOSI+PC9zY3JpcHQ+CgkJCQkJPHNjcmlwdCBub25jZT0iZVZGME1YaDVTSEZOVFhCVWVVdEtiRmxtYmxaWVRuWlRSeTlRSzBSdVZXWlZNRlIwVGtjemJtWnNUVDA2YWpKRlNEaFlVMjFSY2pSaWIyWkpSVVExVTFkTmRXcHFZMXB4T0dGU1NteEtRakl3WWxZeVpsWlNaejA9IiBzcmM9Ii9hcHBzL2VuY3J5cHRpb24vanMvZW5jcnlwdGlvbi5qcz92PTJhNzU4NGViOWRiNTIxNzc4N2U5NDkwN2QwNTY5Y2RlLTE5Ij48L3NjcmlwdD4KCQkJCQk8c2NyaXB0IG5vbmNlPSJlVkYwTVhoNVNIRk5UWEJVZVV0S2JGbG1ibFpZVG5aVFJ5OVFLMFJ1VldaVk1GUjBUa2N6Ym1ac1RUMDZhakpGU0RoWVUyMVJjalJpYjJaSlJVUTFVMWROZFdwcVkxcHhPR0ZTU214S1FqSXdZbFl5WmxaU1p6MD0iIHNyYz0iL2pzL2NvcmUvbWVyZ2VkLXNoYXJlLWJhY2tlbmQuanM/dj0yYTc1ODRlYjlkYjUyMTc3ODdlOTQ5MDdkMDU2OWNkZS0xOSI+PC9zY3JpcHQ+CgkJCQkJPHNjcmlwdCBub25jZT0iZVZGME1YaDVTSEZOVFhCVWVVdEtiRmxtYmxaWVRuWlRSeTlRSzBSdVZXWlZNRlIwVGtjemJtWnNUVDA2YWpKRlNEaFlVMjFSY2pSaWIyWkpSVVExVTFkTmRXcHFZMXB4T0dGU1NteEtRakl3WWxZeVpsWlNaejA9IiBzcmM9Ii9hcHBzL2ZpbGVzX3BkZnZpZXdlci9qcy9wcmV2aWV3cGx1Z2luLmpzP3Y9MmE3NTg0ZWI5ZGI1MjE3Nzg3ZTk0OTA3ZDA1NjljZGUtMTkiPjwvc2NyaXB0PgoJCQkJCTxzY3JpcHQgbm9uY2U9ImVWRjBNWGg1U0hGTlRYQlVlVXRLYkZsbWJsWllUblpUUnk5UUswUnVWV1pWTUZSMFRrY3pibVpzVFQwNmFqSkZTRGhZVTIxUmNqUmliMlpKUlVRMVUxZE5kV3BxWTFweE9HRlNTbXhLUWpJd1lsWXlabFpTWnowPSIgc3JjPSIvYXBwcy9maWxlc192aWRlb3BsYXllci9qcy92aWV3ZXIuanM/dj0yYTc1ODRlYjlkYjUyMTc3ODdlOTQ5MDdkMDU2OWNkZS0xOSI+PC9zY3JpcHQ+CgkJCQkJPHNjcmlwdCBub25jZT0iZVZGME1YaDVTSEZOVFhCVWVVdEtiRmxtYmxaWVRuWlRSeTlRSzBSdVZXWlZNRlIwVGtjemJtWnNUVDA2YWpKRlNEaFlVMjFSY2pSaWIyWkpSVVExVTFkTmRXcHFZMXB4T0dGU1NteEtRakl3WWxZeVpsWlNaejA9IiBzcmM9Ii9jb3JlL2pzL2pxdWVyeS11aS1maXhlcy5qcz92PTJhNzU4NGViOWRiNTIxNzc4N2U5NDkwN2QwNTY5Y2RlLTE5Ij48L3NjcmlwdD4KCQkJCQk8c2NyaXB0IG5vbmNlPSJlVkYwTVhoNVNIRk5UWEJVZVV0S2JGbG1ibFpZVG5aVFJ5OVFLMFJ1VldaVk1GUjBUa2N6Ym1ac1RUMDZhakpGU0RoWVUyMVJjalJpYjJaSlJVUTFVMWROZFdwcVkxcHhPR0ZTU214S1FqSXdZbFl5WmxaU1p6MD0iIHNyYz0iL2NvcmUvanMvZmlsZXMvZmlsZWluZm8uanM/dj0yYTc1ODRlYjlkYjUyMTc3ODdlOTQ5MDdkMDU2OWNkZS0xOSI+PC9zY3JpcHQ+CgkJCQkJPHNjcmlwdCBub25jZT0iZVZGME1YaDVTSEZOVFhCVWVVdEtiRmxtYmxaWVRuWlRSeTlRSzBSdVZXWlZNRlIwVGtjemJtWnNUVDA2YWpKRlNEaFlVMjFSY2pSaWIyWkpSVVExVTFkTmRXcHFZMXB4T0dGU1NteEtRakl3WWxZeVpsWlNaejA9IiBzcmM9Ii9jb3JlL2pzL2ZpbGVzL2NsaWVudC5qcz92PTJhNzU4NGViOWRiNTIxNzc4N2U5NDkwN2QwNTY5Y2RlLTE5Ij48L3NjcmlwdD4KCQkJCQk8c2NyaXB0IG5vbmNlPSJlVkYwTVhoNVNIRk5UWEJVZVV0S2JGbG1ibFpZVG5aVFJ5OVFLMFJ1VldaVk1GUjBUa2N6Ym1ac1RUMDZhakpGU0RoWVUyMVJjalJpYjJaSlJVUTFVMWROZFdwcVkxcHhPR0ZTU214S1FqSXdZbFl5WmxaU1p6MD0iIHNyYz0iL2NvcmUvanMvY29udGFjdHNtZW51LmpzP3Y9MmE3NTg0ZWI5ZGI1MjE3Nzg3ZTk0OTA3ZDA1NjljZGUtMTkiPjwvc2NyaXB0PgoJCQkJCTxzY3JpcHQgbm9uY2U9ImVWRjBNWGg1U0hGTlRYQlVlVXRLYkZsbWJsWllUblpUUnk5UUswUnVWV1pWTUZSMFRrY3pibVpzVFQwNmFqSkZTRGhZVTIxUmNqUmliMlpKUlVRMVUxZE5kV3BxWTFweE9HRlNTbXhLUWpJd1lsWXlabFpTWnowPSIgc3JjPSIvYXBwcy9maWxlc19zaGFyaW5nL2pzL2F1dGhlbnRpY2F0ZS5qcz92PTJhNzU4NGViOWRiNTIxNzc4N2U5NDkwN2QwNTY5Y2RlLTE5Ij48L3NjcmlwdD4KCQkJCTxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iL2FwcHMvdGhlbWluZy9zdHlsZXM/dj0xOSIvPjxzY3JpcHQgc3JjPSIvYXBwcy90aGVtaW5nL2pzL3RoZW1pbmc/dj0xOSIgbm9uY2U9ImVWRjBNWGg1U0hGTlRYQlVlVXRLYkZsbWJsWllUblpUUnk5UUswUnVWV1pWTUZSMFRrY3pibVpzVFQwNmFqSkZTRGhZVTIxUmNqUmliMlpKUlVRMVUxZE5kV3BxWTFweE9HRlNTbXhLUWpJd1lsWXlabFpTWnowPSI+PC9zY3JpcHQ+CTwvaGVhZD4KCTxib2R5IGlkPSJib2R5LWxvZ2luIj4KCQk8bm9zY3JpcHQ+Cgk8ZGl2IGlkPSJub2phdmFzY3JpcHQiPgoJCTxkaXY+CgkJCVRoaXMgYXBwbGljYXRpb24gcmVxdWlyZXMgSmF2YVNjcmlwdCBmb3IgY29ycmVjdCBvcGVyYXRpb24uIFBsZWFzZSA8YSBocmVmPSJodHRwOi8vZW5hYmxlLWphdmFzY3JpcHQuY29tLyIgdGFyZ2V0PSJfYmxhbmsiIHJlbD0ibm9yZWZlcnJlciI+ZW5hYmxlIEphdmFTY3JpcHQ8L2E+IGFuZCByZWxvYWQgdGhlIHBhZ2UuCQk8L2Rpdj4KCTwvZGl2Pgo8L25vc2NyaXB0PgoJCTxkaXYgY2xhc3M9IndyYXBwZXIiPgoJCQk8ZGl2IGNsYXNzPSJ2LWFsaWduIj4KCQkJCQkJCQkJPGhlYWRlciByb2xlPSJiYW5uZXIiPgoJCQkJCQk8ZGl2IGlkPSJoZWFkZXIiPgoJCQkJCQkJPGRpdiBjbGFzcz0ibG9nbyI+CgkJCQkJCQkJPGgxIGNsYXNzPSJoaWRkZW4tdmlzdWFsbHkiPgoJCQkJCQkJCQlTYXZlZC5nZQkJCQkJCQkJPC9oMT4KCQkJCQkJCQkJCQkJCQkJCQk8aW1nIHNyYz0iL2FwcHMvdGhlbWluZy9sb2dvP3Y9MTkiLz4KCQkJCQkJCQkJCQkJCQkJPC9kaXY+CgkJCQkJCQk8ZGl2IGlkPSJsb2dvLWNsYWltIiBzdHlsZT0iZGlzcGxheTpub25lOyI+PC9kaXY+CgkJCQkJCTwvZGl2PgoJCQkJCTwvaGVhZGVyPgoJCQkJCQkJCTxmb3JtIG1ldGhvZD0icG9zdCI+Cgk8ZmllbGRzZXQ+CgkJCQkJPGRpdiBjbGFzcz0id2FybmluZy1pbmZvIj5UaGlzIHNoYXJlIGlzIHBhc3N3b3JkLXByb3RlY3RlZDwvZGl2PgoJCQkJCQk8cD4KCQkJPGxhYmVsIGZvcj0icGFzc3dvcmQiIGNsYXNzPSJpbmZpZWxkIj5QYXNzd29yZDwvbGFiZWw+CgkJCTxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9InJlcXVlc3R0b2tlbiIgdmFsdWU9InlRdDF4eUhxTU1wVHlLSmxZZm5WWE52U0cvUCtEblVmVTBUdE5HM25mbE09OmoyRUg4WFNtUXI0Ym9mSUVENVNXTXVqamNacThhUkpsSkIyMGJWMmZWUmc9IiAvPgoJCQk8aW5wdXQgdHlwZT0icGFzc3dvcmQiIG5hbWU9InBhc3N3b3JkIiBpZD0icGFzc3dvcmQiCgkJCQlwbGFjZWhvbGRlcj0iUGFzc3dvcmQiIHZhbHVlPSIiCgkJCQlhdXRvY29tcGxldGU9Im9mZiIgYXV0b2NhcGl0YWxpemU9Im9mZiIgYXV0b2NvcnJlY3Q9Im9mZiIKCQkJCWF1dG9mb2N1cyAvPgoJCQk8aW5wdXQgdHlwZT0ic3VibWl0IiBpZD0icGFzc3dvcmQtc3VibWl0IiAKCQkJCWNsYXNzPSJzdmcgaWNvbi1jb25maXJtIGlucHV0LWJ1dHRvbi1pbmxpbmUiIHZhbHVlPSIiIGRpc2FibGVkPSJkaXNhYmxlZCIgLz4KCQk8L3A+Cgk8L2ZpZWxkc2V0Pgo8L2Zvcm0+CgkJCQk8ZGl2IGNsYXNzPSJwdXNoIj48L2Rpdj48IS0tIGZvciBzdGlja3kgZm9vdGVyIC0tPgoJCQk8L2Rpdj4KCQk8L2Rpdj4KCQk8Zm9vdGVyIHJvbGU9ImNvbnRlbnRpbmZvIj4KCQkJPHAgY2xhc3M9ImluZm8iPgoJCQkJPGEgaHJlZj0iaHR0cHM6Ly9zYXZlZC5nZSIgdGFyZ2V0PSJfYmxhbmsiIHJlbD0ibm9yZWZlcnJlciI+U2F2ZWQuZ2U8L2E+IOKAkyBhIHNhZmUgaG9tZSBmb3IgYWxsIHlvdXIgZGF0YQkJCTwvcD4KCQk8L2Zvb3Rlcj4KCTwvYm9keT4KPC9odG1sPgo=
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 04:00:14 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloud.testdomain.com/remote.php/dav/files/testuser/base.txt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic ZGFjaGk6ZDE5ODkxMTlP
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 24 Nov 2017 17:54:48 GMT
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Content-Length:
+      - '22'
+      Connection:
+      - keep-alive
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Fri, 24-Nov-2017 18:54:48 GMT; Max-Age=3600
+      - oc_sessionPassphrase=1w9CjwEI2vUCNVWkex1bRy1uSjmHe02th2fQhQFEtk7YAbatFcq17OArhwQIbycad43Iquc0%2FrJzyFLi42FjoqoLjb2rdU9fTcLmYeGQe2W0YBVUeR3Ss%2BMH3F%2BI0kuG;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=5ba922a712b072e9d15f7fbccaeb8543; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - default-src 'none';
+      Last-Modified:
+      - Fri, 24 Nov 2017 17:54:02 GMT
+      Etag:
+      - '"6b95134ebc5e803644fbb87c64c89e85"'
+      Content-Disposition:
+      - attachment; filename*=UTF-8''base.txt; filename="base.txt"
+      Oc-Etag:
+      - '"6b95134ebc5e803644fbb87c64c89e85"'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: UTF-8
+      string: contents from base.txt
+    http_version: 
+  recorded_at: Fri, 24 Nov 2017 17:54:48 GMT
+recorded_with: VCR 3.0.3

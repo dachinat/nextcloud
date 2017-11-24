@@ -1,0 +1,158 @@
+---
+http_interactions:
+- request:
+    method: mkcol
+    uri: https://cloud.testdomain.com/remote.php/dav/files/testuser/dir2
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic ZGFjaGk6ZDE5ODkxMTlP
+  response:
+    status:
+      code: 405
+      message: Method Not Allowed
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 24 Nov 2017 17:43:29 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Fri, 24-Nov-2017 18:43:29 GMT; Max-Age=3600
+      - oc_sessionPassphrase=LsgX1BdBXdPPnKdUvcRPHt%2BeQj85MoDEzdJm%2BiYbIpR%2BeqY2jP9AoXIqEPFIT06pW%2Bhx5MS0hVV8dv3De1koo2IBw3aOXdmd%2FoehWMQ1Bq5Rc%2BG0lDk3x2lAZpUeO88b;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=af416429bc7d0976c259fb31528d78f0; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - default-src 'none';
+      Allow:
+      - OPTIONS, GET, HEAD, DELETE, PROPFIND, PUT, PROPPATCH, COPY, MOVE, REPORT
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="utf-8"?>
+        <d:error xmlns:d="DAV:" xmlns:s="http://sabredav.org/ns">
+          <s:exception>Sabre\DAV\Exception\MethodNotAllowed</s:exception>
+          <s:message>The resource you tried to create already exists</s:message>
+        </d:error>
+    http_version: 
+  recorded_at: Fri, 24 Nov 2017 17:43:29 GMT
+- request:
+    method: propfind
+    uri: https://cloud.testdomain.com/remote.php/dav/files/testuser//
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0"?>
+              <d:propfind  xmlns:d="DAV:" xmlns:oc="http://owncloud.org/ns" xmlns:nc="http://nextcloud.org/ns">
+                <d:prop>
+                  <d:getlastmodified />
+                  <d:getetag />
+                  <d:resourcetype />
+                  <d:getcontenttype />
+                  <d:getcontentlength />
+                  <oc:id />
+                  <oc:fileid />
+                  <oc:permissions />
+                  <oc:size />
+                  <nc:has-preview />
+                  <oc:favorite />
+                  <oc:comments-href />
+                  <oc:comments-count />
+                  <oc:comments-unread />
+                  <oc:owner-id />
+                  <oc:owner-display-name />
+                  <oc:share-types />
+                  <nc:has-preview />
+                </d:prop>
+              </d:propfind>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic ZGFjaGk6ZDE5ODkxMTlP
+  response:
+    status:
+      code: 207
+      message: Multi-Status
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 24 Nov 2017 17:43:30 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Fri, 24-Nov-2017 18:43:30 GMT; Max-Age=3600
+      - oc_sessionPassphrase=eTwDJ4ze39VKddVPsnU8az8Up%2FFJ%2FHv8Mq1lTfmN9we8BUwaOxGu7Cj16uA%2FTkvykF8gCDCqXLd0ipeFmsdP1LyHu0mF%2FJ8Ql6a%2BTdlsDLTcJbGGbgd8ZirJfyclhJeb;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=67c6d3d15bf21484fe37750b0c9f2de6; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - default-src 'none';
+      Vary:
+      - Brief,Prefer
+      Dav:
+      - 1, 3, extended-mkcol, access-control, calendarserver-principal-property-search,
+        calendar-access, calendar-proxy, calendar-auto-schedule, calendar-availability,
+        calendarserver-subscribed, oc-resource-sharing, oc-calendar-publishing, calendarserver-sharing,
+        addressbook, nc-calendar-search
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0"?>
+        <d:multistatus xmlns:d="DAV:" xmlns:s="http://sabredav.org/ns" xmlns:cal="urn:ietf:params:xml:ns:caldav" xmlns:cs="http://calendarserver.org/ns/" xmlns:card="urn:ietf:params:xml:ns:carddav" xmlns:oc="http://owncloud.org/ns" xmlns:nc="http://nextcloud.org/ns"><d:response><d:href>/remote.php/dav/files/testuser/</d:href><d:propstat><d:prop><d:getlastmodified>Fri, 24 Nov 2017 17:26:16 GMT</d:getlastmodified><d:getetag>&quot;5a185638ed7ec&quot;</d:getetag><d:resourcetype><d:collection/></d:resourcetype><oc:id>00000143ocny5rihhfu4</oc:id><oc:fileid>143</oc:fileid><oc:permissions>RDNVCK</oc:permissions><oc:size>3</oc:size><nc:has-preview>false</nc:has-preview><oc:favorite>0</oc:favorite><oc:comments-href>/remote.php/dav/comments/files/143</oc:comments-href><oc:comments-count>0</oc:comments-count><oc:comments-unread>0</oc:comments-unread><oc:owner-id>testuser</oc:owner-id><oc:owner-display-name>Test User</oc:owner-display-name><oc:share-types/></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat><d:propstat><d:prop><d:getcontenttype/><d:getcontentlength/></d:prop><d:status>HTTP/1.1 404 Not Found</d:status></d:propstat></d:response><d:response><d:href>/remote.php/dav/files/testuser/base.txt</d:href><d:propstat><d:prop><d:getlastmodified>Fri, 24 Nov 2017 16:57:36 GMT</d:getlastmodified><d:getetag>&quot;97f3a9216c50fa79d02e8fc66becfb4a&quot;</d:getetag><d:resourcetype/><d:getcontenttype>text/plain</d:getcontenttype><d:getcontentlength>1</d:getcontentlength><oc:id>00005658ocny5rihhfu4</oc:id><oc:fileid>5658</oc:fileid><oc:permissions>RDNVW</oc:permissions><oc:size>1</oc:size><nc:has-preview>false</nc:has-preview><oc:favorite>0</oc:favorite><oc:comments-href>/remote.php/dav/comments/files/5658</oc:comments-href><oc:comments-count>0</oc:comments-count><oc:comments-unread>0</oc:comments-unread><oc:owner-id>testuser</oc:owner-id><oc:owner-display-name>Test User</oc:owner-display-name><oc:share-types/></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat></d:response><d:response><d:href>/remote.php/dav/files/testuser/dir1/</d:href><d:propstat><d:prop><d:getlastmodified>Fri, 24 Nov 2017 17:26:16 GMT</d:getlastmodified><d:getetag>&quot;5a185638ed7ec&quot;</d:getetag><d:resourcetype><d:collection/></d:resourcetype><oc:id>00005650ocny5rihhfu4</oc:id><oc:fileid>5650</oc:fileid><oc:permissions>RDNVCK</oc:permissions><oc:size>2</oc:size><nc:has-preview>false</nc:has-preview><oc:favorite>0</oc:favorite><oc:comments-href>/remote.php/dav/comments/files/5650</oc:comments-href><oc:comments-count>0</oc:comments-count><oc:comments-unread>0</oc:comments-unread><oc:owner-id>testuser</oc:owner-id><oc:owner-display-name>Test User</oc:owner-display-name><oc:share-types/></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat><d:propstat><d:prop><d:getcontenttype/><d:getcontentlength/></d:prop><d:status>HTTP/1.1 404 Not Found</d:status></d:propstat></d:response><d:response><d:href>/remote.php/dav/files/testuser/dir2/</d:href><d:propstat><d:prop><d:getlastmodified>Fri, 24 Nov 2017 16:57:19 GMT</d:getlastmodified><d:getetag>&quot;5a184f6fab3cc&quot;</d:getetag><d:resourcetype><d:collection/></d:resourcetype><oc:id>00005651ocny5rihhfu4</oc:id><oc:fileid>5651</oc:fileid><oc:permissions>RDNVCK</oc:permissions><oc:size>0</oc:size><nc:has-preview>false</nc:has-preview><oc:favorite>0</oc:favorite><oc:comments-href>/remote.php/dav/comments/files/5651</oc:comments-href><oc:comments-count>0</oc:comments-count><oc:comments-unread>0</oc:comments-unread><oc:owner-id>testuser</oc:owner-id><oc:owner-display-name>Test User</oc:owner-display-name><oc:share-types/></d:prop><d:status>HTTP/1.1 200 OK</d:status></d:propstat><d:propstat><d:prop><d:getcontenttype/><d:getcontentlength/></d:prop><d:status>HTTP/1.1 404 Not Found</d:status></d:propstat></d:response></d:multistatus>
+    http_version: 
+  recorded_at: Fri, 24 Nov 2017 17:43:30 GMT
+recorded_with: VCR 3.0.3

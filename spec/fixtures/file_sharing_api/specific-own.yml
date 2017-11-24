@@ -1,0 +1,111 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloud.testdomain.com/ocs/v2.php/apps/files_sharing/api/v1/shares?path=/file1.txt&reshares=&subfiles=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic dGVzdDI6ZEFjaGkxOTg5MTE5TyE=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 03:40:34 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 04:40:34 GMT; Max-Age=3600
+      - oc_sessionPassphrase=pvOSj%2BQZjYs%2BGRCGa6gNNhAWCCrsQhMcCIY33bnE1QfK9pudI2osXdxgofkkvrUF3W5dppqsxTxlv%2F7RhH67DWrah1dMNkZLLzJIwDmj4AU%2FMDLrdKXVcM61T5%2F7Wxku;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=3508bfb6b17fed57871e6ac40537651e; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data>
+          <element>
+           <id>45</id>
+           <share_type>0</share_type>
+           <uid_owner>test2</uid_owner>
+           <displayname_owner>test2</displayname_owner>
+           <permissions>19</permissions>
+           <stime>1511233593</stime>
+           <parent/>
+           <expiration/>
+           <token/>
+           <uid_file_owner>test2</uid_file_owner>
+           <displayname_file_owner>test2</displayname_file_owner>
+           <path>/file1.txt</path>
+           <item_type>file</item_type>
+           <mimetype>text/plain</mimetype>
+           <storage_id>home::test2</storage_id>
+           <storage>61</storage>
+           <item_source>5033</item_source>
+           <file_source>5033</file_source>
+           <file_parent>5028</file_parent>
+           <file_target>/file1.txt</file_target>
+           <share_with>test1</share_with>
+           <share_with_displayname>test1</share_with_displayname>
+           <mail_send>0</mail_send>
+           <tags/>
+          </element>
+         </data>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 03:40:34 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,135 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloud.testdomain.com/ocs/v2.php/apps/files_sharing/api/v1/shares?path=/folder1&reshares=&subfiles=true
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic dGVzdDI6ZEFjaGkxOTg5MTE5TyE=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 03:40:47 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 04:40:47 GMT; Max-Age=3600
+      - oc_sessionPassphrase=JwS9vAFlr2YlEe3tLg6NJDrN4Ch5HwfvFI1bnp1Tdd6bw8iPOdaaSyiGizO7enc1M1VrE1r1KzncFX4CnlwjnX3aNyt19fHurkTQ%2F7IhiooHZMO2m%2FiWSWUpVwYdGz72;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=490f4b317f3645a7e3a25bda968df23e; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data>
+          <element>
+           <id>61</id>
+           <share_type>0</share_type>
+           <uid_owner>test2</uid_owner>
+           <displayname_owner>test2</displayname_owner>
+           <permissions>19</permissions>
+           <stime>1511235583</stime>
+           <parent/>
+           <expiration/>
+           <token/>
+           <uid_file_owner>test2</uid_file_owner>
+           <displayname_file_owner>test2</displayname_file_owner>
+           <path>/folder1/file1.txt</path>
+           <item_type>file</item_type>
+           <mimetype>text/plain</mimetype>
+           <storage_id>home::test2</storage_id>
+           <storage>61</storage>
+           <item_source>5192</item_source>
+           <file_source>5192</file_source>
+           <file_parent>5188</file_parent>
+           <file_target>/file1 (2).txt</file_target>
+           <share_with>test1</share_with>
+           <share_with_displayname>test1</share_with_displayname>
+           <mail_send>0</mail_send>
+          </element>
+          <element>
+           <id>62</id>
+           <share_type>0</share_type>
+           <uid_owner>test2</uid_owner>
+           <displayname_owner>test2</displayname_owner>
+           <permissions>19</permissions>
+           <stime>1511235589</stime>
+           <parent/>
+           <expiration/>
+           <token/>
+           <uid_file_owner>test2</uid_file_owner>
+           <displayname_file_owner>test2</displayname_file_owner>
+           <path>/folder1/file2.txt</path>
+           <item_type>file</item_type>
+           <mimetype>text/plain</mimetype>
+           <storage_id>home::test2</storage_id>
+           <storage>61</storage>
+           <item_source>5195</item_source>
+           <file_source>5195</file_source>
+           <file_parent>5188</file_parent>
+           <file_target>/file2 (2).txt</file_target>
+           <share_with>test3</share_with>
+           <share_with_displayname>test3</share_with_displayname>
+           <mail_send>0</mail_send>
+          </element>
+         </data>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 03:40:47 GMT
+recorded_with: VCR 3.0.3

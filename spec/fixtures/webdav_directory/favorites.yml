@@ -1,0 +1,129 @@
+---
+http_interactions:
+- request:
+    method: report
+    uri: https://cloud.testdomain.com/remote.php/dav/files/testuser//
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0"?>
+              <oc:filter-files  xmlns:d="DAV:" xmlns:oc="http://owncloud.org/ns" xmlns:nc="http://nextcloud.org/ns">
+                <oc:filter-rules>
+                  <oc:favorite>1</oc:favorite>
+                </oc:filter-rules>
+                <d:prop>
+                  <d:getlastmodified />
+                  <d:getetag />
+                  <d:getcontenttype />
+                  <d:resourcetype />
+                  <oc:fileid />
+                  <oc:permissions />
+                  <oc:size />
+                  <d:getcontentlength />
+                  <nc:has-preview />
+                  <oc:favorite />
+                  <oc:comments-unread />
+                  <oc:owner-display-name />
+                  <oc:share-types />
+                </d:prop>
+              </oc:filter-files>
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic ZGFjaGk6ZDE5ODkxMTlP
+  response:
+    status:
+      code: 207
+      message: Multi-Status
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 24 Nov 2017 18:24:30 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Fri, 24-Nov-2017 19:24:30 GMT; Max-Age=3600
+      - oc_sessionPassphrase=KGKkzJmQ1qH4icFv%2BSBizqHB4L%2Fp%2BZSrdgf%2B3euNMOYoLq726L98J3%2F5qhlLDI8bEHZgBSY6%2BgSyeo4fD3tBztxXQVKnzZrmu%2FzmDoyD0OZXqLpYAtd0QLmJED0sYUbO;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=3d21df154edac9760ea3b2266ed44e3d; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Content-Security-Policy:
+      - default-src 'none';
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0"?>
+        <d:multistatus xmlns:d="DAV:" xmlns:s="http://sabredav.org/ns" xmlns:cal="urn:ietf:params:xml:ns:caldav" xmlns:cs="http://calendarserver.org/ns/" xmlns:card="urn:ietf:params:xml:ns:carddav" xmlns:oc="http://owncloud.org/ns" xmlns:nc="http://nextcloud.org/ns">
+         <d:response>
+          <d:status>HTTP/1.1 200 OK</d:status>
+          <d:href>/remote.php/dav/files/testuser/fav1.txt</d:href>
+          <d:propstat>
+           <d:prop>
+            <d:getlastmodified>Fri, 24 Nov 2017 18:01:46 GMT</d:getlastmodified>
+            <d:getetag>&quot;76fe227250565de28ad14d79ff42c456&quot;</d:getetag>
+            <d:getcontenttype>text/plain</d:getcontenttype>
+            <d:resourcetype/>
+            <oc:fileid>5686</oc:fileid>
+            <oc:permissions>RDNVW</oc:permissions>
+            <oc:size>1</oc:size>
+            <d:getcontentlength>1</d:getcontentlength>
+            <nc:has-preview>false</nc:has-preview>
+            <oc:favorite>1</oc:favorite>
+            <oc:comments-unread>0</oc:comments-unread>
+            <oc:owner-display-name>Test User</oc:owner-display-name>
+            <oc:share-types/>
+           </d:prop>
+           <d:status>HTTP/1.1 200 OK</d:status>
+          </d:propstat>
+         </d:response>
+         <d:response>
+          <d:status>HTTP/1.1 200 OK</d:status>
+          <d:href>/remote.php/dav/files/testuser/fav2.txt</d:href>
+          <d:propstat>
+           <d:prop>
+            <d:getlastmodified>Fri, 24 Nov 2017 18:01:58 GMT</d:getlastmodified>
+            <d:getetag>&quot;9e96acc4d03d9e191b835170143f54a8&quot;</d:getetag>
+            <d:getcontenttype>text/plain</d:getcontenttype>
+            <d:resourcetype/>
+            <oc:fileid>5689</oc:fileid>
+            <oc:permissions>RDNVW</oc:permissions>
+            <oc:size>1</oc:size>
+            <d:getcontentlength>1</d:getcontentlength>
+            <nc:has-preview>false</nc:has-preview>
+            <oc:favorite>1</oc:favorite>
+            <oc:comments-unread>0</oc:comments-unread>
+            <oc:owner-display-name>Test User</oc:owner-display-name>
+            <oc:share-types/>
+           </d:prop>
+           <d:status>HTTP/1.1 200 OK</d:status>
+          </d:propstat>
+         </d:response>
+        </d:multistatus>
+    http_version: 
+  recorded_at: Fri, 24 Nov 2017 18:24:31 GMT
+recorded_with: VCR 3.0.3

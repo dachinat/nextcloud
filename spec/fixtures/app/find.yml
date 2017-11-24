@@ -1,0 +1,281 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cloud.testdomain.com/ocs/v2.php/cloud/apps/external
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic c3VwcG9ydDplZVAyakM3TENwUW4=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 02:45:06 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 03:45:06 GMT; Max-Age=3600
+      - oc_sessionPassphrase=hzHrmaX4TTONUX0y3Uclhj3RAXsQDUs3f9TIPxrpqJSLd2jExcThNAGIrkVFc1j6PgwwCRCZq7oNz0ouL1RyavckGI7KJNP9FeVzzD7mQRZ%2BLldLH9DVDsK5K62Njvhz;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=6e169ac79324826fa65acd7cdf9939e0; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data>
+          <id>external</id>
+          <name>External sites</name>
+          <summary>Add external sites to your Nextcloud navigation</summary>
+          <description>This application allows an admin to add additional links into the Nextcloud menus.
+        Following a link, the external website appears in the Nextcloud frame.
+        It is also possible to add links only for a given language and/or device.
+
+        More information is available in the External sites documentation.</description>
+          <documentation>
+           <admin>https://docs.nextcloud.com/server/12/admin_manual/configuration_server/external_sites.html</admin>
+          </documentation>
+          <licence>AGPL</licence>
+          <author>
+           <element>Joas Schilling</element>
+           <element>Frank Karlitschek</element>
+          </author>
+          <category>
+           <element>customization</element>
+           <element>integration</element>
+           <element>organization</element>
+           <element>tools</element>
+          </category>
+          <screenshot>
+           <element>https://github.com/nextcloud/external/raw/master/docs/admin-settings.png</element>
+           <element>https://github.com/nextcloud/external/raw/master/docs/menu-and-settings-integration.png</element>
+           <element>https://github.com/nextcloud/external/raw/master/docs/page-sample.png</element>
+          </screenshot>
+          <website>https://github.com/nextcloud/external</website>
+          <bugs>https://github.com/nextcloud/external/issues</bugs>
+          <repository value="https://github.com/nextcloud/external.git"/>
+          <version>2.0.3</version>
+          <namespace>External</namespace>
+          <dependencies>
+           <nextcloud/>
+          </dependencies>
+          <settings>
+           <admin>OCA\External\Settings\Admin</admin>
+          </settings>
+          <info/>
+          <remote/>
+          <public/>
+          <types/>
+          <repair-steps>
+           <install/>
+           <pre-migration/>
+           <post-migration/>
+           <live-migration/>
+           <uninstall/>
+          </repair-steps>
+          <background-jobs/>
+          <two-factor-providers/>
+          <commands/>
+          <activity>
+           <filters/>
+           <settings/>
+           <providers/>
+          </activity>
+         </data>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 02:45:06 GMT
+- request:
+    method: get
+    uri: https://cloud.testdomain.com/ocs/v2.php/cloud/apps/external
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Ocs-Apirequest:
+      - 'true'
+      Authorization:
+      - Basic c3VwcG9ydDplZVAyakM3TENwUW4=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 21 Nov 2017 02:45:37 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - __Host-nc_sameSiteCookielax=true; path=/; httponly;secure; expires=Fri, 31-Dec-2100
+        23:59:59 GMT; SameSite=lax
+      - __Host-nc_sameSiteCookiestrict=true; path=/; httponly;secure; expires=Fri,
+        31-Dec-2100 23:59:59 GMT; SameSite=strict
+      - cookie_test=test; expires=Tue, 21-Nov-2017 03:45:37 GMT; Max-Age=3600
+      - oc_sessionPassphrase=Z9Pc81hxjX2iiG%2BdVkKOmOQk%2BnRhzlsUfvWNNn6QyGqdvjM2MK6cFGekjNsTXVom%2FGoOeymGsbelqIQHveri6aBqXhdY8Q%2Bh4BBPwjyc6gjVJuX1cP7X4uFoSw9Mt4qH;
+        path=/; secure; HttpOnly
+      - ocny5rihhfu4=241b0af885b662b122828e9da7c23d81; path=/; secure; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Content-Security-Policy:
+      - default-src 'none';base-uri 'none';manifest-src 'self'
+      Strict-Transport-Security:
+      - max-age=15768000;includeSubDomains; preload;
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - none
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0"?>
+        <ocs>
+         <meta>
+          <status>ok</status>
+          <statuscode>200</statuscode>
+          <message>OK</message>
+         </meta>
+         <data>
+          <id>external</id>
+          <name>External sites</name>
+          <summary>Add external sites to your Nextcloud navigation</summary>
+          <description>This application allows an admin to add additional links into the Nextcloud menus.
+        Following a link, the external website appears in the Nextcloud frame.
+        It is also possible to add links only for a given language and/or device.
+
+        More information is available in the External sites documentation.</description>
+          <documentation>
+           <admin>https://docs.nextcloud.com/server/12/admin_manual/configuration_server/external_sites.html</admin>
+          </documentation>
+          <licence>AGPL</licence>
+          <author>
+           <element>Joas Schilling</element>
+           <element>Frank Karlitschek</element>
+          </author>
+          <category>
+           <element>customization</element>
+           <element>integration</element>
+           <element>organization</element>
+           <element>tools</element>
+          </category>
+          <screenshot>
+           <element>https://github.com/nextcloud/external/raw/master/docs/admin-settings.png</element>
+           <element>https://github.com/nextcloud/external/raw/master/docs/menu-and-settings-integration.png</element>
+           <element>https://github.com/nextcloud/external/raw/master/docs/page-sample.png</element>
+          </screenshot>
+          <website>https://github.com/nextcloud/external</website>
+          <bugs>https://github.com/nextcloud/external/issues</bugs>
+          <repository value="https://github.com/nextcloud/external.git"/>
+          <version>2.0.3</version>
+          <namespace>External</namespace>
+          <dependencies>
+           <nextcloud/>
+          </dependencies>
+          <settings>
+           <admin>OCA\External\Settings\Admin</admin>
+          </settings>
+          <info/>
+          <remote/>
+          <public/>
+          <types/>
+          <repair-steps>
+           <install/>
+           <pre-migration/>
+           <post-migration/>
+           <live-migration/>
+           <uninstall/>
+          </repair-steps>
+          <background-jobs/>
+          <two-factor-providers/>
+          <commands/>
+          <activity>
+           <filters/>
+           <settings/>
+           <providers/>
+          </activity>
+         </data>
+        </ocs>
+    http_version:
+  recorded_at: Tue, 21 Nov 2017 02:45:37 GMT
+recorded_with: VCR 3.0.3
