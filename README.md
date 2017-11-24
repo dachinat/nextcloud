@@ -1,4 +1,4 @@
-[![Gem](https://img.shields.io/gem/v/nextcloud.svg?style=flat-square)](https://rubygems.org/gems/nextcloud) [![Travis](https://img.shields.io/travis/dachinat/nextcloud.svg?style=flat-square)](https://travis-ci.org/dachinat/nextcloud)
+[![Gem](https://img.shields.io/gem/v/nextcloud.svg?style=flat-square)](https://rubygems.org/gems/nextcloud) [![Travis](https://img.shields.io/travis/dachinat/nextcloud.svg?style=flat-square)](https://travis-ci.org/dachinat/nextcloud) [![Coveralls github](https://img.shields.io/coveralls/github/dachinat/nextcloud.svg?style=flat-square)](https://coveralls.io/github/dachinat/nextcloud)
 
 # Nextcloud Ruby API
 
