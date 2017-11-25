@@ -24,6 +24,13 @@ require "nextcloud/models/directory"
 # Namespace for Nextcloud OCS API communication
 module Nextcloud
   class << self
+    # Allow base initializing
+    #
+    # @return [Object] Api
+    def new(args)
+      Api.new(args)
+    end
+
     # Access to OCS API from base instance
     #
     # @param [Hash] args authentication credentials.

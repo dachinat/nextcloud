@@ -54,6 +54,19 @@ webdav = Nextcloud.webdav(
 )
 ```
 
+You can also initialize and work with both APIs (useful if credentials are same):
+
+```
+nextcloud = Nextcloud.new(
+  url: "https://cloud.yourdomain.com",
+  username: "your_username",
+  password: "your_password"
+)
+
+ocs = nextcloud.ocs
+webdav = nextcloud.webdav
+```
+
 #### Initialize specific APIs
 
 Previously described method is recommended, however you can initialize in a differt manner.
@@ -61,38 +74,38 @@ Previously described method is recommended, however you can initialize in a diff
 Initialize OCS Users API:
 
 ```
-user = Nextcloud::Ocs::User.new(url: "...", username: "...", password: "...")
+user = Nextcloud::Ocs::User.new(url: "…", username: "…", password: "…")
 ```
 
 Initialize OCS Groups API:
 
 ```
-group = Nextcloud::Ocs::Group.new(url: "...", username: "...", password: "...")
+group = Nextcloud::Ocs::Group.new(url: "…", username: "…", password: "…")
 ```
 
 Initialize OCS Apps API:
 
 ```
-app = Nextcloud::Ocs::App.new(url: "...", username: "...", password: "...")
+app = Nextcloud::Ocs::App.new(url: "…", username: "…", password: "…")
 ```
 
 Initialize OCS File Sharing API:
 
 ```
-file_sharing = Nextcloud::Ocs::FileSharingApi.new(url: "...", username: "...", password: "...")
+file_sharing = Nextcloud::Ocs::FileSharingApi.new(url: "…", username: "…", password: "…")
 ```
 
 Initialize WebDAV Directory API:
 
 ```
-directory = Nextcloud::WebDav::Directory.new(url: "...", username: "...", password: "...")
+directory = Nextcloud::WebDav::Directory.new(url: "…", username: "…", password: "…")
 ```
 
 > When initializing this way, to work with certain objects some circumstances might force you use `set` method.
 > For example if you wish to list members of group admin, using first way you could simply write 
 `ocs.group('admin').members`, in this case you will need to use `group.set('admin').members`. There is another way to
 set object of intereset by putting it into initialize arguments, like so 
-`Nextcloud::Ocs::Group.new({...credentials}, groupid: "admin")` it can be then reset with
+`Nextcloud::Ocs::Group.new({…credentials}, groupid: "admin")` it can be then reset with
 `set`. Corressponding parameter names for other classes are `userid` and `appid`.
 
 ### *OCS Api usage*
@@ -119,7 +132,7 @@ response_meta = users.meta
 
 ```
 user = ocs.user.find("your_user_1")
-# => #<Nextcloud::Models::User:0x00000103964020 @enabled="true", @id="your_user_1", ..., @meta={"status"=>"ok", "statuscode"=>"200", "message"=>"OK"}>
+# => #<Nextcloud::Models::User:0x00000103964020 @enabled="true", @id="your_user_1", …, @meta={"status"=>"ok", "statuscode"=>"200", "message"=>"OK"}>
 ```
 
 Having `user` variable you have access to following attributes:
@@ -348,7 +361,7 @@ meta = ocs.group.destroy("group3").meta
 
 ```
 enabled = ocs.app.enabled
-# => [...]
+# => […]
 meta = enabled.meta
 # => {"status"=>"ok", "statuscode"=>"200", "message"=>"OK"}
 ```
@@ -357,7 +370,7 @@ meta = enabled.meta
 
 ```
 disabled = ocs.app.disabled
-# => [...]
+# => […]
 meta = disabled.meta
 # => {"status"=>"ok", "statuscode"=>"200", "message"=>"OK"}
 ```
@@ -366,7 +379,7 @@ meta = disabled.meta
 
 ```
 app = ocs.app.find("appname")
-# => {...}
+# => {…}
 meta = app.meta
 # => {"status"=>"ok", "statuscode"=>"200", "message"=>"OK"}
 ```
@@ -414,13 +427,13 @@ ocs_fs = Nextcloud::Ocs::FileSharingApi.new(
 An URL has to be a base of your Nextcloud instance. For Sharing API requests, it will be parsed to 
 `https://cloud.yourdomain.com/ocs/v2.php/apps/files_sharing/api/v1/` 
 
-> You can also initialize with `Nextcloud.ocs(...credentials).file_sharing`
+> You can also initialize with `Nextcloud.ocs(…credentials).file_sharing`
 
 #### Retrieve all shares of an (authenticated) user
 
 ```
 all_shares = ocs_fs.all
-# => [{...}, {...}]
+# => [{…}, {…}]
 meta = all_shares.meta
 # => {"status"=>"ok", "statuscode"=>"200", "message"=>"OK"}
 ```
@@ -429,7 +442,7 @@ meta = all_shares.meta
 
 ```
 share = ocs_fs.find(11)
-# => {"id" => "22", "shareType" => "0", ...}
+# => {"id" => "22", "shareType" => "0", …}
 meta = share.meta 
 # => {"status"=>"ok", "statuscode"=>"200", "message"=>"OK"}
 ```
@@ -529,7 +542,7 @@ To create a federated cloud shares you can use `create` method on `FileSharingAp
 
 ```
 accepted = ocs_fs.federated.accepted
-# => [{...}, {...}]
+# => [{…}, {…}]
 meta = accepted.meta
 # => {"status"=>"ok", "statuscode"=>"200", "message"=>"OK"}
 ```
@@ -538,7 +551,7 @@ meta = accepted.meta
 
 ```
 pending = ocs_fs.federated.pending
-# => [{...}, {...}]
+# => [{…}, {…}]
 meta = pending.meta
 # => {"status"=>"ok", "statuscode"=>"200", "message"=>"OK"}
 ```
@@ -547,7 +560,7 @@ meta = pending.meta
 
 ```
 federated_share = ocs_fs.federated.find(12)
-# => {"id"=>"12", "remote"=>"https://...", ...}
+# => {"id"=>"12", "remote"=>"https://…", …}
 meta = federated_share.meta
 # => {"status"=>"ok", "statuscode"=>"200", "message"=>"OK"}
 ```

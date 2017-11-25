@@ -47,5 +47,19 @@ module Nextcloud
       # end
       raw ? response.body : Nokogiri::XML.parse(response.body)
     end
+
+    # Creates Ocs API instance
+    #
+    # @return [Object] OcsApi
+    def ocs
+      OcsApi.new(url: @url, username: @username, password: @password)
+    end
+
+    # Create WebDav API instance
+    #
+    # @return [Object] WebdavApi
+    def webdav
+      WebdavApi.new(url: @url, username: @username, password: @password)
+    end
   end
 end
