@@ -98,7 +98,7 @@ file_sharing = Nextcloud::Ocs::FileSharingApi.new(url: "…", username: "…", p
 Initialize WebDAV Directory API:
 
 ```
-directory = Nextcloud::WebDav::Directory.new(url: "…", username: "…", password: "…")
+directory = Nextcloud::Webdav::Directory.new(url: "…", username: "…", password: "…")
 ```
 
 > When initializing this way, to work with certain objects some circumstances might force you use `set` method.
