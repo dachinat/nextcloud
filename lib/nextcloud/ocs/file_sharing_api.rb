@@ -9,7 +9,7 @@ module Nextcloud
     class FileSharingApi < OcsApi
       include Helpers
 
-      attr_accessor :meta, :shareid
+      attr_accessor :meta
 
       # Initializes API with user credentials
       #

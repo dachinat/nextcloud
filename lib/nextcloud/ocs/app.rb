@@ -28,7 +28,7 @@ module Nextcloud
 
       # Sets app (useful if class is initiated without OcsApi.app)
       #
-      # @param userid [String] User identifier
+      # @param appid [String] App identifier
       # @return [Obeject] self
       def set(appid)
         @appid = appid

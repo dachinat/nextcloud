@@ -28,7 +28,7 @@ module Nextcloud
 
       # Sets group (useful if class is initiated without OcsApi.group)
       #
-      # @param userid [String] User identifier
+      # @param groupid [String] Group identifier
       # @return [Obeject] self
       def set(groupid)
         @groupid = groupid

@@ -105,7 +105,7 @@ directory = Nextcloud::Webdav::Directory.new(url: "…", username: "…", passwo
 > For example if you wish to list members of group admin, using first way you could simply write 
 `ocs.group('admin').members`, in this case you will need to use `group.set('admin').members`. There is another way to
 set object of intereset by putting it into initialize arguments, like so 
-`Nextcloud::Ocs::Group.new({…credentials}, groupid: "admin")` it can be then reset with
+`Nextcloud::Ocs::Group.new({…credentials}, groupid="admin")` it can be then reset with
 `set`. Corressponding parameter names for other classes are `userid` and `appid`.
 
 ### *OCS Api usage*
@@ -560,7 +560,7 @@ meta = pending.meta
 
 ```
 federated_share = ocs_fs.federated.find(12)
-# => {"id"=>"12", "remote"=>"https://…", …}
+# => {"id"=>"12", "remote"=>"https://…", …}s
 meta = federated_share.meta
 # => {"status"=>"ok", "statuscode"=>"200", "message"=>"OK"}
 ```
