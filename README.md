@@ -632,7 +632,7 @@ webdav.directory.destroy("some_dir")
 webdav.directory.move("source_dir/", "destination_dir/")
 ```
 
-### Copy a directory
+#### Copy a directory
 
 ```
 webdav.directory.copy("source_dir/", "destination_dir/)
