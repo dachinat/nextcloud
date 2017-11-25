@@ -586,16 +586,16 @@ meta = ocs_fs.federated.decline(13)
 # => {"status"=>"ok", "statuscode"=>"200", "message"=>"OK"}
 ```
 
-#### *WebDAV Api usage*
+### *WebDAV Api usage*
 
 In these examples `webdav` variable is assumed to be a valid instance of
 `Nextcloud.webdav` or `Nextcloud::Webdav::{CLASS_NAME}.new`
 
-#### File/Directory Operations
+### File/Directory Operations
 
 Let's assume 
 
-### Find files/directories in given path
+#### Find files/directories in given path
 
 ```
 directory = webdav.directory.find("dir1/")
@@ -608,25 +608,25 @@ array of resutls:
 directory.contents
 ``` 
 
-### Query information about file
+#### Query information about file
 
 ```
 file = webdav.directory.find("some_file.txt")
 ```
 
-### Create a directory
+#### Create a directory
 
 ```
 webdav.directory.create("some_dir/new_dir")
 ```
 
-### Delete a directory
+#### Delete a directory
 
 ```
 webdav.directory.destroy("some_dir")
 ```
 
-### Move a directory
+#### Move a directory
 
 ```
 webdav.directory.move("source_dir/", "destination_dir/")
@@ -638,31 +638,31 @@ webdav.directory.move("source_dir/", "destination_dir/")
 webdav.directory.copy("source_dir/", "destination_dir/)
 ```
 
-### Download a file
+#### Download a file
 
 ```
 webdav.directory.download("some_file.txt")
 ```
 
-### Upload a file
+#### Upload a file
 
 ```
 webdav.directory.upload("some_dir/new_file.txt", "CONTENTS")
 ```
 
-### Make a file favorite
+#### Make a file favorite
 
 ```
 webdav.directory.favorite("some_file")
 ```
 
-### Unfavorite a file
+#### Unfavorite a file
 
 ```
 webdav.directory.unfavorite("some_file")
 ```
 
-### Show favorite files in path
+#### Show favorite files in path
 
 ```
 webdav.directory.favorites("/")
