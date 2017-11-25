@@ -593,8 +593,6 @@ In these examples `webdav` variable is assumed to be a valid instance of
 
 ### File/Directory Operations
 
-Let's assume 
-
 #### Find files/directories in given path
 
 ```
