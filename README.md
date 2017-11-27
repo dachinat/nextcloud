@@ -69,7 +69,7 @@ webdav = nextcloud.webdav
 
 #### Initialize specific APIs
 
-Previously described method is recommended, however you can initialize in a differt manner.
+Previously described method is recommended, however you can initialize in a different manner.
 
 Initialize OCS Users API:
 
@@ -106,7 +106,7 @@ directory = Nextcloud::Webdav::Directory.new(url: "…", username: "…", passwo
 `ocs.group('admin').members`, in this case you will need to use `group.set('admin').members`. There is another way to
 set object of intereset by putting it into initialize arguments, like so 
 `Nextcloud::Ocs::Group.new({…credentials}, groupid="admin")` it can be then reset with
-`set`. Corressponding parameter names for other classes are `userid` and `appid`.
+`set`. Corresponding parameter names for other classes are `userid` and `appid`.
 
 ### *OCS Api usage*
 
@@ -449,7 +449,7 @@ meta = share.meta
 
 #### Retrive shares from specific file or folder
 
-Can be called with two optional paremeters
+Can be called with two optional parameters
 * reshares - boolean - shows all shares for a given file
 * subfiles - boolean - shows all shares for subfiles in a directory
 
@@ -600,7 +600,7 @@ directory = webdav.directory.find("dir1/")
 ```
 
 Will return instance of `Directory` model with information about current directory, it's method `contents` will contain
-array of resutls:
+array of results:
 
 ```
 directory.contents
