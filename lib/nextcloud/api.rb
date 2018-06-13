@@ -26,9 +26,7 @@ module Nextcloud
     def request(method, path, params = nil, body = nil, depth = nil, destination = nil, raw = false)
       response = Net::HTTP.start(@url.host, @url.port,
         use_ssl: @url.scheme == "https") do |http|
-        req = Kernel.const_get("Net::HTTP::#{method.capitalize}").new(
-          @url.to_s + path, 'Content-Type': "application/x-www-form-urlencoded"
-        )
+        req = Kernel.const_get("Net::HTTP::#{method.capitalize}").new(@url.request_uri + path)
         req["OCS-APIRequest"] = true
         req.basic_auth @username, @password
         req["Content-Type"] = "application/x-www-form-urlencoded"
