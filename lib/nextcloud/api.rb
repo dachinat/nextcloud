@@ -23,13 +23,13 @@ module Nextcloud
     # @param path [String] Nextcloud OCS API request path
     # @param params [Hash, nil] Parameters to send
     # @return [Object] Nokogiri::XML::Document
-    def request(method, path, params = nil, body = nil, depth = nil, destination = nil, raw = false)
+    def request(method, path, params = nil, body = nil, depth = nil, destination = nil, raw = false, json_request = false)
       response = Net::HTTP.start(@url.host, @url.port,
         use_ssl: @url.scheme == "https") do |http|
         req = Kernel.const_get("Net::HTTP::#{method.capitalize}").new(@url.request_uri + path)
         req["OCS-APIRequest"] = true
         req.basic_auth @username, @password
-        req["Content-Type"] = "application/x-www-form-urlencoded"
+        req["Content-Type"] = json_request ? "application/json" : "application/x-www-form-urlencoded"
 
         req["Depth"] = 0 if depth
         req["Destination"] = destination if destination

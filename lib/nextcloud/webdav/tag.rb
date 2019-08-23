@@ -35,6 +35,27 @@ module Nextcloud
         (has_dav_errors(response)) ? has_dav_errors(response) : tag(response)
       end
 
+      # Create a tag
+      #
+      # @param display_name [String] display name of tag
+      # @param user_visible [Boolean] is user visible or not
+      # @param user_assignable [Boolean] is user assignable or not
+      # @return [Hash] Returns status
+      def create(display_name, user_visible, user_assignable)
+        body = {name: display_name, userVisible: user_visible, userAssignable: user_assignable}.to_json
+        response = @api.request(:post, @path, nil, body, nil, nil, false, true)
+        parse_dav_response(response)
+      end
+
+      # Delete a tag
+      #
+      # @param tag_id [Integer] id of a tag
+      # @return [Hash] Returns status
+      def destroy(tag_id)
+        response = @api.request(:delete, "#{@path}/#{tag_id}")
+        parse_dav_response(response)
+      end
+
       private
 
       # Parses as turns tag response to model object
