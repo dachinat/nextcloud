@@ -14,6 +14,7 @@ require "nextcloud/ocs/user"
 require "nextcloud/ocs/group"
 require "nextcloud/ocs/app"
 require "nextcloud/ocs/file_sharing_api"
+require "nextcloud/ocs/group_folder"
 
 require "nextcloud/webdav_api"
 require "nextcloud/webdav/directory"
