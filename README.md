@@ -666,6 +666,80 @@ webdav.directory.unfavorite("some_file")
 webdav.directory.favorites("/")
 ```
 
+### Group Folder API
+
+#### Initialize with authentication information
+
+First of all you need to initiate a class with authentication information of user
+
+```
+gf = Nextcloud::Ocs::GroupFolder.new(
+  url: "https://cloud.yourdomain.com",
+  username: "your_username",
+  password: "your_password"
+)
+```
+
+#### List of folders
+
+```
+gf.folders
+```
+
+#### Find folder with id 16
+
+```
+gf.find(16)
+```
+
+#### Get ID of folder with name 'Intern
+
+```
+gf.get_folder_id('Intern')
+```
+
+#### Create folder with name 'Intern'
+
+```
+gf.create('Intern')
+```
+
+#### Destroy folder id 16
+
+```
+gf.destroy(16)
+```
+
+#### Give access to folder with id 16 for 'Intern'
+
+```
+gf.give_access(16, 'Intern')
+```
+
+#### Remove access to folder with id 16 for 'Intern'
+
+```
+gf.remove_access(16, 'Intern')
+```
+
+#### Set permissions for folder with id 16 and group 'Intern' to 31
+
+```
+gf.set_permissions(16, 'Intern', 31)
+```
+
+#### Set quota of folder with id 16 to 7 GB
+
+```
+gf.set_quota(16, 1024*1024*1024*7)
+```
+
+#### Rename folder with id 16 to 'Extern'
+
+```
+gf.rename_folder(16, 'Extern')
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/dachinat/nextcloud. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.

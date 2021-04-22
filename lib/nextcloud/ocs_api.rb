@@ -30,5 +30,12 @@ module Nextcloud
     def file_sharing
       Ocs::FileSharingApi.new(url: @url, username: @username, password: @password)
     end
+
+    # Initiates Group Folder class
+    #
+    # @return [Object] Group Folder instance
+    def group_folder
+      Ocs::GroupFolder.new(url: @url, username: @username, password: @password)
+    end
   end
 end
