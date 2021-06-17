@@ -1,6 +1,6 @@
-[![Gem](https://img.shields.io/gem/v/nextcloud.svg?style=flat-square)](https://rubygems.org/gems/nextcloud) [![Travis](https://img.shields.io/travis/dachinat/nextcloud.svg?style=flat-square)](https://travis-ci.org/dachinat/nextcloud) [![Coveralls github](https://img.shields.io/coveralls/github/dachinat/nextcloud.svg?style=flat-square)](https://coveralls.io/github/dachinat/nextcloud) [![Yard Docs](https://img.shields.io/badge/yard-docs-blue.svg?style=flat-square)](http://rubydoc.info/github/dachinat/nextcloud/master)
-
 # Nextcloud Ruby API
+
+Forked from https://github.com/dachinat/nextcloud
 
 Wrapper gem for Ruby used for communicating with Nextcloud OCS and WebDAV API endpoints.
 
@@ -739,15 +739,6 @@ gf.set_quota(16, 1024*1024*1024*7)
 ```
 gf.rename_folder(16, 'Extern')
 ```
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/dachinat/nextcloud. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the Nextcloud gem project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/dachinat/nextcloud/blob/master/CODE_OF_CONDUCT.md).
