@@ -18,6 +18,7 @@ require "nextcloud/ocs/group_folder"
 
 require "nextcloud/webdav_api"
 require "nextcloud/webdav/directory"
+require "nextcloud/webdav/search"
 
 require "nextcloud/models/user"
 require "nextcloud/models/directory"

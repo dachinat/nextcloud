@@ -27,6 +27,16 @@ module Nextcloud
         @path = "/files/#{@api.username}"
       end
 
+      # Gets a file path from fileid
+      #
+      # @param id [String] fileid from the file we want
+      # @param scope [String] Path of file or directory to search in
+      # @return [Object,Hash] Hash of error or instance of Directory model class
+      def get_path_from_fileid(id, scope = '')
+        response = @api.request(:search, '' , nil, GET_BY_ID(id, "#{@path}/#{scope}"))
+        return has_dav_errors(response) ? has_dav_errors(response) : response.xpath('//response//href').text.match(/\/#{DAV_URL}\/files\/[^\/]*(.*)/)[1]
+      end
+
       # Query a file, find contents of directory (including information about directory)
       #
       # @param path [String] Path of file or directory to search in
@@ -34,6 +44,16 @@ module Nextcloud
       def find(path = "/")
         response = @api.request(:propfind, "#{@path}/#{path}", nil, RESOURCE)
         (has_dav_errors(response)) ? has_dav_errors(response) : directory(response)
+      end
+
+      # Query a file, find contents of directory (including information about directory) from fileid
+      #
+      # @param id [String] file id of the file / directory
+      # @param scope [String] Path of file or directory to search in
+      # @return [Object,Hash] Hash of error or instance of Directory model class
+      def find_by_fileid(id, scope = '')
+        path = get_path_from_fileid(id, scope)
+        path.class == Hash ? path : find(path)
       end
 
       # Create a directory
@@ -93,6 +113,11 @@ module Nextcloud
         parse_dav_response(response)
       end
 
+      def search_by_name(name, scope = '')
+        response = @api.request(:search, '' , nil, SEARCH_BY_NAME(name, "#{@path}/#{scope}"))
+        return (has_dav_errors(response)) ? has_dav_errors(response) : directory(response, false)
+      end
+
       # Make file/directory a favorite
       #
       # @param path [String] Path of file/directory (relative)
@@ -138,22 +163,20 @@ module Nextcloud
           prop = h["propstat"].try(:[], 0).try(:[], "prop") || h["propstat"]["prop"]
 
           params = {
-              href: h["href"],
-              lastmodified: prop["getlastmodified"],
-              tag: prop["getetag"],
-              resourcetype: prop["resourcetype"].nil? ? "file" : "collection",
               id: prop["id"],
               fileid: prop["fileid"],
-              permissions: prop["permissions"],
-              size: prop["size"],
+              contenttype: prop["getcontenttype"],
+              display_name: CGI.unescape(h["href"].split('/').last),
               has_preview: prop["has_preview"] == "false" ? false : true,
-              favorite: prop["favorite"] == "0" ? false : true,
-              comments_href: prop["comments_href"],
-              comments_count: prop["comments_count"],
-              comments_unread: prop["comments_unread"],
-              owner_id: prop["owner_id"],
+              lastmodified: prop["getlastmodified"],
               owner_display_name: prop["owner_display_name"],
-              share_types: prop["share_types"]
+              owner_id: prop["owner_id"],
+              path: h["href"].gsub(/\/remote.php\/dav\/files\/[^\/]*\//, '/'),
+              permissions: prop["permissions"],
+              resourcetype: prop["resourcetype"].nil? ? "file" : "collection",
+              share_types: prop["share_types"],
+              size: prop["size"],
+              tag: prop["getetag"],
           }
 
           if skip_first

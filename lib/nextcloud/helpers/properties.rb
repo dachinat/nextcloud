@@ -69,5 +69,97 @@ module Nextcloud
           </d:prop>
         </oc:filter-files>'.freeze
     end
+
+    #Body to send to get item by fileid
+    def GET_BY_ID(id, scope)
+      return "<?xml version=\"1.0\"?>
+      <d:searchrequest xmlns:d=\"DAV:\" xmlns:oc=\"http://owncloud.org/ns\" xmlns:nc=\"http://nextcloud.org/ns\">
+        <d:basicsearch>
+          <d:select>
+            <d:prop>
+              <d:getlastmodified />
+              <d:getetag />
+              <d:resourcetype />
+              <d:getcontenttype />
+              <d:getcontentlength />
+              <oc:id />
+              <oc:fileid />
+              <oc:permissions />
+              <oc:size />
+              <nc:has-preview />
+              <oc:favorite />
+              <oc:comments-href />
+              <oc:comments-count />
+              <oc:comments-unread />
+              <oc:owner-id />
+              <oc:owner-display-name />
+              <oc:share-types />
+              <nc:has-preview />
+            </d:prop>
+          </d:select>
+          <d:from>
+            <d:scope>
+              <d:href>#{scope}</d:href>
+              <d:depth>infinity</d:depth>
+            </d:scope>
+          </d:from>
+          <d:where>
+            <d:eq>
+              <d:prop>
+                <oc:fileid/>
+              </d:prop>
+              <d:literal>#{id}</d:literal>
+            </d:eq>
+          </d:where>
+          <d:orderby/>
+        </d:basicsearch>
+      </d:searchrequest>"
+    end
+
+    #Body to send to get files by name
+    def SEARCH_BY_NAME(name, scope)
+      return "<?xml version=\"1.0\"?>
+      <d:searchrequest xmlns:d=\"DAV:\" xmlns:oc=\"http://owncloud.org/ns\" xmlns:nc=\"http://nextcloud.org/ns\">
+        <d:basicsearch>
+          <d:select>
+            <d:prop>
+              <d:getlastmodified />
+              <d:getetag />
+              <d:resourcetype />
+              <d:getcontenttype />
+              <d:getcontentlength />
+              <oc:id />
+              <oc:fileid />
+              <oc:permissions />
+              <oc:size />
+              <nc:has-preview />
+              <oc:favorite />
+              <oc:comments-href />
+              <oc:comments-count />
+              <oc:comments-unread />
+              <oc:owner-id />
+              <oc:owner-display-name />
+              <oc:share-types />
+              <nc:has-preview />
+            </d:prop>
+          </d:select>
+          <d:from>
+            <d:scope>
+              <d:href>#{scope}</d:href>
+              <d:depth>infinity</d:depth>
+            </d:scope>
+          </d:from>
+          <d:where>
+            <d:like>
+              <d:prop>
+                <d:displayname/>
+              </d:prop>
+              <d:literal>%#{name}%</d:literal>
+            </d:like>
+          </d:where>
+          <d:orderby/>
+        </d:basicsearch>
+      </d:searchrequest>"
+    end
   end
 end

@@ -2,6 +2,8 @@ module Nextcloud
   module Models
     # Directory model
     #
+    # @!attribute [rw] name
+    #   @return [String] File/directory name
     # @!attribute [rw] href
     #   @return [String] File/directory location
     # @!attribute [rw] lastmodified
@@ -42,8 +44,8 @@ module Nextcloud
       # Initiates a model instance
       #
       # @param [Hash]
-      def initialize(href: nil, lastmodified: nil, tag: nil, resourcetype: nil, contenttype: nil, contentlength: nil,
-        id: nil, fileid: nil, permissions: nil, size: nil, has_preview: nil, favorite: nil,
+      def initialize(id: nil, fileid: nil, display_name: '', path: nil, href: nil, lastmodified: nil, tag: nil, resourcetype: nil, contenttype: nil, contentlength: nil,
+        permissions: nil, size: nil, has_preview: nil, favorite: nil,
         comments_href: nil, comments_count: nil, comments_unread: nil, owner_id: nil,
         owner_display_name: nil, share_types: nil, skip_contents: false)
 
