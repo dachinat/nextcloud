@@ -53,6 +53,10 @@ module Nextcloud
           instance_variable_set("@#{v}", instance_eval(v.to_s)) if instance_eval(v.to_s)
         end
 
+        if resourcetype == "collection"
+          @contents = []
+        end
+
         remove_instance_variable (:@skip_contents) if skip_contents
       end
 
@@ -68,7 +72,6 @@ module Nextcloud
       # @param [Hash]
       # @return [Array] Contents array
       def add(args)
-        @contents = [] if @contents.nil?
         @contents << self.class.new(args.merge(skip_contents: true))
       end
     end

@@ -38,7 +38,7 @@ module Nextcloud
         req["OCS-APIRequest"] = true
         req.basic_auth @username, @password
 
-        req["Depth"] = 0 if depth
+        req["Depth"] = depth || 1
         req["Destination"] = destination if destination
 
         req.set_form_data(params) if params

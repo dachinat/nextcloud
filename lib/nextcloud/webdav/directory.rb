@@ -37,6 +37,11 @@ module Nextcloud
         return has_dav_errors(response) ? has_dav_errors(response) : response.xpath('//response//href').text.match(/\/#{DAV_URL}\/files\/[^\/]*(.*)/)[1]
       end
 
+      def all_directories
+        response = @api.request(:propfind, "#{@path}/", nil, RESOURCE, 'infinity')
+        (has_dav_errors(response)) ? has_dav_errors(response) : directory(response, true, true)
+      end
+
       # Query a file, find contents of directory (including information about directory)
       #
       # @param path [String] Path of file or directory to search in
@@ -152,7 +157,7 @@ module Nextcloud
       # @param response [Object] Nokogiri::XML::Document
       # @param skip_first [Boolean] Skip or not first element
       # @return [Object,Array] Returns Object if first element not skipped, array otherwise
-      def directory(response, skip_first = true)
+      def directory(response, skip_first = true, only_directories = false)
         response = doc_to_hash(response).try(:[], "multistatus").try(:[], "response")
         response = [response] if response.is_a? Hash
 
@@ -179,19 +184,45 @@ module Nextcloud
               tag: prop["getetag"],
           }
 
-          if skip_first
+          if only_directories
+            if prop["resourcetype"].nil?
+              next
+            end
+
             if index == 0
               @directory = Models::Directory.new(params)
             else
-              @directory.add(params)
+              add_child(@directory, params,  ["/"] + params[:path].split("/")[1..])
             end
           else
-            @directory = [] if @directory.nil?
-            @directory << Models::Directory.new(params.merge(skip_contents: true))
+            if skip_first
+              if index == 0
+                @directory = Models::Directory.new(params)
+              else
+                @directory.add(params)
+              end
+            else
+              @directory = [] if @directory.nil?
+              @directory << Models::Directory.new(params.merge(skip_contents: true))
+            end
           end
         end
         @directory
       end
+
+      def add_child(current, target, paths)
+        if paths.length > 2
+          child_index = current.contents.index {|d| d.display_name == paths[1]}
+          if child_index
+            add_child(current.contents[child_index], target, paths[1..])
+          else
+            throw "Trying to build a house from the roof"
+          end
+        else
+          current.add(target)
+        end
+      end
+
     end
   end
 end
