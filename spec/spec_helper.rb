@@ -1,4 +1,5 @@
 require "coveralls"
+require "pry-byebug"
 Coveralls.wear!
 
 require "bundler/setup"

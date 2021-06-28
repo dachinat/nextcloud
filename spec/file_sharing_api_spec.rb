@@ -44,7 +44,8 @@ RSpec.describe Nextcloud::Ocs::FileSharingApi do
 
   it ".create creates a public link" do
     VCR.use_cassette("file_sharing_api/create-protected-public-link") do
-      @subject.create("/some_file2.txt", 3, nil, nil, "somePassword1_")
+      result = @subject.create("/some_file2.txt", 3, nil, nil, "somePassword1_")
+      expect(result.share_url).to eq("https://cloud.testdomain.com/s/ShXdLVSmHvDF3kS")
       url = @subject.specific("/some_file2.txt")[0]["url"]
       expect(open(url).read).to match("password-protected")
     end
