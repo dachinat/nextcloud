@@ -34,7 +34,9 @@ module Nextcloud
       # @return [Object,Hash] Hash of error or instance of Directory model class
       def get_path_from_fileid(id, scope = '')
         response = @api.request(:search, '' , nil, GET_BY_ID(id, "#{@path}/#{scope}"))
-        return has_dav_errors(response) ? has_dav_errors(response) : response.xpath('//response//href').text.match(/\/#{DAV_URL}\/files\/[^\/]*(.*)/)[1]
+        response.remove_namespaces!
+
+        return response.xpath('//response/href').length > 0 ? response.xpath('//response//href').text.match(/\/#{DAV_URL}\/files\/[^\/]*(.*)/)[1] : nil
       end
 
       def all_directories
