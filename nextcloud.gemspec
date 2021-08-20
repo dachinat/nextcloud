@@ -3,7 +3,7 @@
 
 Gem::Specification.new do |s|
   s.name = "nextcloud".freeze
-  s.version = "1.3.2"
+  s.version = "1.3.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.metadata = { "allowed_push_host" => "https://rubygems.org", "yard.run" => "yri" } if s.respond_to? :metadata=
@@ -16,10 +16,10 @@ Gem::Specification.new do |s|
   s.files = [".gitignore".freeze, ".rspec".freeze, ".rubocop.yml".freeze, ".ruby-version".freeze, ".travis.yml".freeze, "CODE_OF_CONDUCT.md".freeze, "Gemfile".freeze, "Gemfile.lock".freeze, "LICENSE.txt".freeze, "README.md".freeze, "Rakefile".freeze, "bin/console".freeze, "bin/setup".freeze, "lib/nextcloud.rb".freeze, "lib/nextcloud/api.rb".freeze, "lib/nextcloud/errors/nextcloud.rb".freeze, "lib/nextcloud/helpers/nextcloud.rb".freeze, "lib/nextcloud/helpers/properties.rb".freeze, "lib/nextcloud/models/directory.rb".freeze, "lib/nextcloud/models/user.rb".freeze, "lib/nextcloud/ocs/app.rb".freeze, "lib/nextcloud/ocs/file_sharing_api.rb".freeze, "lib/nextcloud/ocs/group.rb".freeze, "lib/nextcloud/ocs/group_folder.rb".freeze, "lib/nextcloud/ocs/user.rb".freeze, "lib/nextcloud/ocs_api.rb".freeze, "lib/nextcloud/version/nextcloud.rb".freeze, "lib/nextcloud/webdav/directory.rb".freeze, "lib/nextcloud/webdav_api.rb".freeze, "nextcloud.gemspec".freeze]
   s.homepage = "https://github.com/dachinat/nextcloud".freeze
   s.licenses = ["MIT".freeze]
-  s.rubygems_version = "3.1.4".freeze
+  s.rubygems_version = "3.1.6".freeze
   s.summary = "Nextcloud API in Ruby".freeze
 
-  s.installed_by_version = "3.1.4" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.1.6" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

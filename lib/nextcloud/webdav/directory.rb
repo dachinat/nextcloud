@@ -194,7 +194,8 @@ module Nextcloud
             if index == 0
               @directory = Models::Directory.new(params)
             else
-              add_child(@directory, params,  ["/"] + params[:path].split("/")[1..])
+              unescaped_path = CGI.unescape(params[:path])
+              add_child(@directory, params,  ["/"] + unescaped_path.split("/")[1..])
             end
           else
             if skip_first
