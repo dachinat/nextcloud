@@ -19,6 +19,8 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     ast (2.3.0)
+    byebug (11.1.3)
+    coderay (1.1.3)
     concurrent-ruby (1.1.8)
     coveralls (0.8.21)
       json (>= 1.8, < 3)
@@ -34,6 +36,7 @@ GEM
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     json (2.5.1)
+    method_source (1.0.0)
     mini_portile2 (2.5.0)
     minitest (5.14.4)
     net-http-report (0.2.0)
@@ -44,6 +47,12 @@ GEM
     parser (2.4.0.2)
       ast (~> 2.3)
     powerpack (0.1.1)
+    pry (0.13.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    pry-byebug (3.9.0)
+      byebug (~> 11.0)
+      pry (~> 0.13.0)
     public_suffix (3.0.1)
     racc (1.5.2)
     rainbow (2.2.2)
@@ -97,6 +106,8 @@ DEPENDENCIES
   bundler (~> 1.16)
   coveralls
   nextcloud!
+  pry
+  pry-byebug
   rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (~> 0.51)
@@ -104,4 +115,4 @@ DEPENDENCIES
   webmock (~> 3.1)
 
 BUNDLED WITH
-   1.16.0
+   1.17.3

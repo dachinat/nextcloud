@@ -10,6 +10,7 @@ module Nextcloud
       include Helpers
 
       attr_accessor :meta
+      attr_reader :share_url
 
       # Initializes API with user credentials
       #
@@ -72,10 +73,11 @@ module Nextcloud
       # @param permissions [Integer,nil] Sets permissions on a resource. 1 gives read rights, 2 update, 4 create,
       #   8 delete
       #  16 share, 31 all rights. Value should be one of previously listed.
-      # @return [Object] Instance including meta response
-      def create(path, shareType, shareWith=nil, publicUpload=nil, password=nil, permissions=nil)
+      # @return [Object] Instance including meta response and share URL if any
+      def create(path, shareType, shareWith = nil, publicUpload = nil, password = nil, permissions = nil)
         args = local_variables.reduce({}) { |c, i| c[i] = binding.local_variable_get(i); c }
         response = request(:post, "/shares", args)
+        @share_url = response.xpath("//url").text
         (@meta = get_meta(response)) && self
       end
 

@@ -40,9 +40,9 @@ module Nextcloud
       def get_folder_id(name)
         response = request(:get, "folders")
         h = doc_to_hash(response, "//data").try(:[], "data").try(:[], "element")
-        group = h.select {|folder| folder["mount_point"] == name }&.first
+        group = h.select { |folder| folder["mount_point"] == name }&.first
         unless group.nil?
-          return group['id']
+          return group["id"]
         end
       end
 
@@ -74,7 +74,7 @@ module Nextcloud
       def destroy(folderid)
         response = request(:delete, "folders/#{folderid}")
         h = doc_to_hash(response, "//data").try(:[], "data")
-        return h == '1'
+        return h == "1"
       end
 
       # Give a group access to a folder
@@ -86,7 +86,7 @@ module Nextcloud
         args = local_variables.reduce({}) { |c, i| c[i] = binding.local_variable_get(i); c }
         response = request(:post, "folders/#{folderid}/groups", args)
         h = doc_to_hash(response, "//data").try(:[], "data")
-        return h == '1'
+        return h == "1"
       end
 
       # Remove access from a group to a folder
@@ -96,7 +96,7 @@ module Nextcloud
       def remove_access(folderid, group)
         response = request(:delete, "folders/#{folderid}/groups/#{group}")
         h = doc_to_hash(response, "//data").try(:[], "data")
-        return h == '1'
+        return h == "1"
       end
 
       # Set the permissions a group has in a folder
@@ -105,7 +105,7 @@ module Nextcloud
       #   PERMISSION_UPDATE = 2;
       #   PERMISSION_DELETE = 8;
       #   PERMISSION_SHARE = 16;
-	    #   PERMISSION_ALL = 31;
+      #   PERMISSION_ALL = 31;
       #
       # @param folderid [Integer] FolderId to modify
       # @param group [String] Group for which the permissions should be changed
@@ -115,19 +115,19 @@ module Nextcloud
         args = local_variables.reduce({}) { |c, i| c[i] = binding.local_variable_get(i); c }
         response = request(:post, "folders/#{folderid}/groups/#{group}", args)
         h = doc_to_hash(response, "//data").try(:[], "data")
-        return h == '1'
+        return h == "1"
       end
 
       # Set the quota for a folder
       #
       # @param folderid [Integer] FolderId to modify
-      # @param quota [Integer] The new quota for the folder in bytes, use -3 for unlimited 
+      # @param quota [Integer] The new quota for the folder in bytes, use -3 for unlimited
       # @return [Bool] True on success
       def set_quota(folderid, quota)
         args = local_variables.reduce({}) { |c, i| c[i] = binding.local_variable_get(i); c }
         response = request(:post, "folders/#{folderid}/quota", args)
         h = doc_to_hash(response, "//data").try(:[], "data")
-        return h == '1'
+        return h == "1"
       end
 
       # Change the name of a folder
@@ -139,7 +139,7 @@ module Nextcloud
         args = local_variables.reduce({}) { |c, i| c[i] = binding.local_variable_get(i); c }
         response = request(:post, "folders/#{folderid}/mountpoint", args)
         h = doc_to_hash(response, "//data").try(:[], "data")
-        return h == '1'
+        return h == "1"
       end
     end
   end
