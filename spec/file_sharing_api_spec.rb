@@ -42,6 +42,7 @@ RSpec.describe Nextcloud::Ocs::FileSharingApi do
     end
   end
 
+  # rubocop:disable Security/Open
   it ".create creates a public link" do
     VCR.use_cassette("file_sharing_api/create-protected-public-link") do
       result = @subject.create("/some_file2.txt", 3, nil, nil, "somePassword1_")
@@ -50,6 +51,7 @@ RSpec.describe Nextcloud::Ocs::FileSharingApi do
       expect(open(url).read).to match("password-protected")
     end
   end
+  # rubocop:enable Security/Open
 
   it ".destroy unshares a file" do
     VCR.use_cassette("file_sharing_api/destroy") do
