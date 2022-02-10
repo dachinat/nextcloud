@@ -1,5 +1,7 @@
 # Nextcloud Ruby API
 
+## Fork info
+
 Forked from https://github.com/Dwimcore/nextcloud
 
 Added content_type param to `Api#requset` method, so that it can be used directly for APIs that require e.g. JSON request body.
@@ -39,7 +41,7 @@ ocs = Nextcloud.ocs(
 )
 ```
 
-An URL has to be a base of your Nextcloud instance. For API requests, it will be parsed to 
+An URL has to be a base of your Nextcloud instance. For API requests, it will be parsed to
 `https://cloud.yourdomain.com/ocs/v2.php/cloud/` or similar.
 
 Once `ocs` is available you can use following methods to initiate specific classes:
@@ -104,15 +106,15 @@ directory = Nextcloud::Webdav::Directory.new(url: "…", username: "…", passwo
 ```
 
 > When initializing this way, to work with certain objects some circumstances might force you use `set` method.
-> For example if you wish to list members of group admin, using first way you could simply write 
+> For example if you wish to list members of group admin, using first way you could simply write
 `ocs.group('admin').members`, in this case you will need to use `group.set('admin').members`. There is another way to
-set object of intereset by putting it into initialize arguments, like so 
+set object of intereset by putting it into initialize arguments, like so
 `Nextcloud::Ocs::Group.new({…credentials}, groupid="admin")` it can be then reset with
 `set`. Corresponding parameter names for other classes are `userid` and `appid`.
 
 ### *OCS Api usage*
 
-These examples assume you have `Nextcloud.ocs` instance or relevant instance of 
+These examples assume you have `Nextcloud.ocs` instance or relevant instance of
 `Nextcloud::Ocs::{CLASS_NAME}.new` stored in `ocs` variable.
 
 ### User actions
@@ -125,7 +127,7 @@ users = ocs.user.all
 
 last_user = user.last
 => #<Nextcloud::Models::User:0x000001042a2ba0 @id="your_user_2">
-     
+
 response_meta = users.meta
 {"status"=>"ok", "statuscode"=>"200", "message"=>"OK"}
 ```
@@ -170,8 +172,8 @@ Valid keys include:
 
 * quota
 * displayname
-* phone 
-* address 
+* phone
+* address
 * website
 * twitter
 * password
@@ -216,7 +218,7 @@ meta = ocs.user.resend_welcome("user3").meta
 ```
 groups = ocs.user("user1").groups
 # => ["admin"]
-meta = groups.meta 
+meta = groups.meta
 # => {"status"=>"ok", "statuscode"=>"200", "message"=>"OK"}
 ```
 
@@ -283,7 +285,7 @@ user.set("user4").group("group1").demote
 ```
 subadmin_groups = ocs.user("user4").subadmin_groups
 # => ["group1"]
-meta = subadmin_groups.meta 
+meta = subadmin_groups.meta
 # => {"status"=>"ok", "statuscode"=>"200", "message"=>"OK"}
 ```
 
@@ -426,8 +428,8 @@ ocs_fs = Nextcloud::Ocs::FileSharingApi.new(
 )
 ```
 
-An URL has to be a base of your Nextcloud instance. For Sharing API requests, it will be parsed to 
-`https://cloud.yourdomain.com/ocs/v2.php/apps/files_sharing/api/v1/` 
+An URL has to be a base of your Nextcloud instance. For Sharing API requests, it will be parsed to
+`https://cloud.yourdomain.com/ocs/v2.php/apps/files_sharing/api/v1/`
 
 > You can also initialize with `Nextcloud.ocs(…credentials).file_sharing`
 
@@ -445,7 +447,7 @@ meta = all_shares.meta
 ```
 share = ocs_fs.find(11)
 # => {"id" => "22", "shareType" => "0", …}
-meta = share.meta 
+meta = share.meta
 # => {"status"=>"ok", "statuscode"=>"200", "message"=>"OK"}
 ```
 
@@ -606,7 +608,7 @@ array of results:
 
 ```
 directory.contents
-``` 
+```
 
 #### Query information about file
 
