@@ -3,7 +3,7 @@
 
 Gem::Specification.new do |s|
   s.name = "nextcloud".freeze
-  s.version = "1.3.2.1"
+  s.version = "1.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.metadata = { "allowed_push_host" => "https://rubygems.org", "yard.run" => "yri" } if s.respond_to? :metadata=
