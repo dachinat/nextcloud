@@ -4,6 +4,8 @@
 
 Forked from https://github.com/Dwimcore/nextcloud
 
+Merged system tag support from https://github.com/rahul100885/nextcloud
+
 Added content_type param to `Api#requset` method, so that it can be used directly for APIs that require e.g. JSON request body.
 
 ## Purpose
