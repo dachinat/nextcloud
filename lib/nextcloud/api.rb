@@ -23,15 +23,22 @@ module Nextcloud
     # @param path [String] Nextcloud OCS API request path
     # @param params [Hash, nil] Parameters to send
     # @return [Object] Nokogiri::XML::Document
-    def request(method, path, params = nil, body = nil, depth = nil, destination = nil, raw = false, json_request = false)
+    def request(method, path, params = nil, body = nil, depth = nil, destination = nil, raw = false, content_type = nil)
       response = Net::HTTP.start(@url.host, @url.port,
         use_ssl: @url.scheme == "https") do |http|
-        req = Kernel.const_get("Net::HTTP::#{method.capitalize}").new(@url.request_uri + path)
+
+        if method != :search
+          req = Kernel.const_get("Net::HTTP::#{method.capitalize}").new(@url.request_uri + path)
+          req["Content-Type"] = content_type || "application/x-www-form-urlencoded"
+        else
+          req = Nextcloud::Webdav::Search.new(@url.request_uri + path)
+          req["Content-Type"] = "application/xml"
+        end
+
         req["OCS-APIRequest"] = true
         req.basic_auth @username, @password
-        req["Content-Type"] = json_request ? "application/json" : "application/x-www-form-urlencoded"
 
-        req["Depth"] = 0 if depth
+        req["Depth"] = depth || 1
         req["Destination"] = destination if destination
 
         req.set_form_data(params) if params
