@@ -68,6 +68,18 @@ module Nextcloud
             <oc:share-types />
           </d:prop>
         </oc:filter-files>'.freeze
+
+      # Body to send to retrive tags properties
+      TAG = '<?xml version="1.0" encoding="utf-8" ?>
+        <a:propfind xmlns:a="DAV:" xmlns:oc="http://owncloud.org/ns">
+          <a:prop>
+            <!-- Retrieve the display-name, user-visible, and user-assignable properties -->
+            <oc:display-name/>
+            <oc:user-visible/>
+            <oc:user-assignable/>
+            <oc:id/>
+          </a:prop>
+        </a:propfind>'.freeze
     end
 
     #Body to send to get item by fileid

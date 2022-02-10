@@ -19,9 +19,11 @@ require "nextcloud/ocs/group_folder"
 require "nextcloud/webdav_api"
 require "nextcloud/webdav/directory"
 require "nextcloud/webdav/search"
+require "nextcloud/webdav/tag"
 
 require "nextcloud/models/user"
 require "nextcloud/models/directory"
+require "nextcloud/models/tag"
 
 # Namespace for Nextcloud OCS API communication
 module Nextcloud
