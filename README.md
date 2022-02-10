@@ -1,6 +1,8 @@
 # Nextcloud Ruby API
 
-Forked from https://github.com/dachinat/nextcloud
+Forked from https://github.com/Dwimcore/nextcloud
+
+Added content_type param to `Api#requset` method, so that it can be used directly for APIs that require e.g. JSON request body.
 
 Wrapper gem for Ruby used for communicating with Nextcloud OCS and WebDAV API endpoints.
 

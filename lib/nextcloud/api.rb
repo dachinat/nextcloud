@@ -23,13 +23,13 @@ module Nextcloud
     # @param path [String] Nextcloud OCS API request path
     # @param params [Hash, nil] Parameters to send
     # @return [Object] Nokogiri::XML::Document
-    def request(method, path, params = nil, body = nil, depth = nil, destination = nil, raw = false)
+    def request(method, path, params = nil, body = nil, depth = nil, destination = nil, raw = false, content_type = nil)
       response = Net::HTTP.start(@url.host, @url.port,
         use_ssl: @url.scheme == "https") do |http|
 
         if method != :search
           req = Kernel.const_get("Net::HTTP::#{method.capitalize}").new(@url.request_uri + path)
-          req["Content-Type"] = "application/x-www-form-urlencoded"
+          req["Content-Type"] = content_type || "application/x-www-form-urlencoded"
         else
           req = Nextcloud::Webdav::Search.new(@url.request_uri + path)
           req["Content-Type"] = "application/xml"
