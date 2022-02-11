@@ -1,5 +1,6 @@
 module Nextcloud
   class Api
+    attr_accessor :debug_output
     attr_reader :url, :username, :password
     protected :url
     protected :username
@@ -24,9 +25,12 @@ module Nextcloud
     # @param params [Hash, nil] Parameters to send
     # @return [Object] Nokogiri::XML::Document
     def request(method, path, params = nil, body = nil, depth = nil, destination = nil, raw = false, content_type = nil)
-      response = Net::HTTP.start(@url.host, @url.port,
-        use_ssl: @url.scheme == "https") do |http|
+      http = Net::HTTP.new(@url.host, @url.port)
+      http.use_ssl = @url.scheme == "https"
 
+      http.set_debug_output @debug_output
+
+      response = http.start do
         if method != :search
           req = Kernel.const_get("Net::HTTP::#{method.capitalize}").new(@url.request_uri + path)
           req["Content-Type"] = content_type || "application/x-www-form-urlencoded"
