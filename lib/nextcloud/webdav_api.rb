@@ -1,5 +1,7 @@
 module Nextcloud
   class WebdavApi < Api
+    public :username
+
     # Remote end of WebDAV API
     DAV_URL = "remote.php/dav".freeze
 
@@ -24,5 +26,14 @@ module Nextcloud
     def tags
       Webdav::Tags.new(self)
     end
+
+    # Initiates Comments class
+    #
+    # @return [Object] Tags instance
+    def comments(scope)
+      Webdav::Comments.new(self, scope)
+    end
+
+    def file_comments; comments('files') end
   end
 end

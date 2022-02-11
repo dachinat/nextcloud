@@ -21,10 +21,12 @@ require "nextcloud/webdav/directory"
 require "nextcloud/webdav/search"
 require "nextcloud/webdav/tags"
 require "nextcloud/webdav/tag_relations"
+require "nextcloud/webdav/comments"
 
 require "nextcloud/models/user"
 require "nextcloud/models/directory"
 require "nextcloud/models/tag"
+require "nextcloud/models/comment"
 
 # Namespace for Nextcloud OCS API communication
 module Nextcloud

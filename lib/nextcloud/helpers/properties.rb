@@ -80,11 +80,22 @@ module Nextcloud
             <oc:id/>
           </a:prop>
         </a:propfind>'.freeze
+
+      # Body to send to retrive comment properties
+      COMMENT = '<?xml version="1.0"?>
+    		<oc:filter-comments
+    			xmlns:d="DAV:"
+    			xmlns:oc="http://owncloud.org/ns"
+    			xmlns:nc="http://nextcloud.org/ns"
+    			xmlns:ocs="http://open-collaboration-services.org/ns">
+    			<oc:limit>20</oc:limit>
+    			<oc:offset>0</oc:offset>
+    		</oc:filter-comments>'.freeze
     end
 
     #Body to send to get item by fileid
     def GET_BY_ID(id, scope)
-      return "<?xml version=\"1.0\"?>
+      "<?xml version=\"1.0\"?>
       <d:searchrequest xmlns:d=\"DAV:\" xmlns:oc=\"http://owncloud.org/ns\" xmlns:nc=\"http://nextcloud.org/ns\">
         <d:basicsearch>
           <d:select>
@@ -130,7 +141,7 @@ module Nextcloud
 
     #Body to send to get files by name
     def SEARCH_BY_NAME(name, scope)
-      return "<?xml version=\"1.0\"?>
+      "<?xml version=\"1.0\"?>
       <d:searchrequest xmlns:d=\"DAV:\" xmlns:oc=\"http://owncloud.org/ns\" xmlns:nc=\"http://nextcloud.org/ns\">
         <d:basicsearch>
           <d:select>
@@ -172,6 +183,20 @@ module Nextcloud
           <d:orderby/>
         </d:basicsearch>
       </d:searchrequest>"
+    end
+
+    #Body to send to modify existing comment
+    def MODIFY_COMMENT(message)
+      "<?xml version=\"1.0\"?>
+  			<d:propertyupdate
+  				xmlns:d=\"DAV:\"
+  				xmlns:oc=\"http://owncloud.org/ns\">
+  			<d:set>
+  				<d:prop>
+  					<oc:message>#{message}</oc:message>
+  				</d:prop>
+  			</d:set>
+			</d:propertyupdate>"
     end
   end
 end
