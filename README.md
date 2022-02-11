@@ -4,7 +4,7 @@
 
 Forked from https://github.com/Dwimcore/nextcloud
 
-Merged system tag support from https://github.com/rahul100885/nextcloud
+Added full file commenting and tagging support. For the latter, used the preliminary implementation as a guide from https://github.com/rahul100885/nextcloud
 
 Added content_type param to `Api#requset` method, so that it can be used directly for APIs that require e.g. JSON request body.
 
@@ -672,6 +672,81 @@ webdav.directory.unfavorite("some_file")
 
 ```
 webdav.directory.favorites("/")
+```
+
+### Comments API
+
+#### Add comment to file
+First you'll need to acquire the required file's ID through the directory API, see above.
+```
+webdav.comments('files').add(fileid, 'some comment')
+```
+or, for short
+```
+webdav.file_comments.add(fileid, 'some comment')
+```
+Will return an array of instances of Comment model with information about the comments. Of most interest
+should be the following attributes:
+- `id`
+- `message`: the comment itself
+- `actor_id`: the username of the commenter
+- `actor_display_name`
+- `creation_datetime`
+
+#### List comments on file
+
+```
+webdav.file_comments.list(fileid)
+```
+
+#### Modify an existing comment
+
+```
+webdav.file_comments.modify(fileid, comment_id, 'the new comment message')
+```
+
+#### Remove a comment
+
+```
+webdav.file_comments.remove(fileid, comment_id)
+```
+
+### Tags API
+
+#### List all system tags
+
+```
+webdav.tags.list
+```
+Will return an array of instances of Tag model with information about the tags, with these attributes:
+- `id`
+- `display_name`
+- `user_visible`
+- `user_assignable`
+
+#### Create system tag
+
+```
+webdav.tags.create('name of the tag', user_visible, user_assignable)
+```
+where the last two params are true/false
+
+#### Destroy a system tag
+
+```
+webdav.tags.destroy(tag_id)
+```
+
+#### Add a system tag to a file
+First you'll need to acquire the required file's ID through the directory API, and the tag's ID. See above.
+```
+webdav.tags.file(fileid).add(tag_id)
+```
+
+#### Remove a system tag from a file
+
+```
+webdav.tags.file(fileid).remove(tag_id)
 ```
 
 ### Group Folder API
