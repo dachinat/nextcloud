@@ -2,29 +2,22 @@ require "net-http-report"
 
 module Nextcloud
   module Webdav
-    # WebDAV class for communicating with Tag mgmt. service
     #
-    # @!attribute [rw] tag
-    #   @return [Array] Used to store model instances when querying with find or favorites
-    class Tag < WebdavApi
+    # Class for communicating with Tag mgmt. service
+    #
+    class Tags
       include Helpers
       include Properties
 
-      attr_accessor :tag
+      # Remote end of Tags API
+      TAGS_URL = "/systemtags".freeze
 
-      # Class initializer
-      # Can be initialized with WebdavApi's tag method or with Nextcloud::Webdav::Tag.new(...credentials...)
+      # Initializes a Tags API
       #
-      # @param args [Object,Hash] Can be instance of Api or credentials list (url, username, password)
-      def initialize(args)
-        if args.class == Nextcloud::WebdavApi
-          @api = args
-        else
-          super
-          @api = self
-        end
-
-        @path = "/systemtags"
+      # @params args [Hash] Hash with url, username and password
+      def initialize(api)
+        @api = api
+        @path = TAGS_URL
       end
 
       # List system tags
@@ -32,7 +25,7 @@ module Nextcloud
       # @return [Object,Hash] Hash of error or instance of Tag model class
       def list()
         response = @api.request(:propfind, @path, nil, TAG)
-        (has_dav_errors(response)) ? has_dav_errors(response) : tag(response)
+        (has_dav_errors(response)) ? has_dav_errors(response) : build_result(response)
       end
 
       # Create a tag
@@ -43,7 +36,7 @@ module Nextcloud
       # @return [Hash] Returns status
       def create(display_name, user_visible, user_assignable)
         body = {name: display_name, userVisible: user_visible, userAssignable: user_assignable}.to_json
-        response = @api.request(:post, @path, nil, body, nil, nil, false, true)
+        response = @api.request(:post, @path, nil, body, nil, nil, false, 'application/json')
         parse_dav_response(response)
       end
 
@@ -56,20 +49,26 @@ module Nextcloud
         parse_dav_response(response)
       end
 
+      def file(fileid)
+        Webdav::TagRelations.new(@api, 'files', fileid)
+      end
+
       private
 
-      # Parses as turns tag response to model object
+      # Parses as turns tag response to array of model objects
       #
       # @param response [Object] Nokogiri::XML::Document
       # @param skip_first [Boolean] Skip or not first element
       # @return [Object,Array] Returns Object if first element not skipped, array otherwise
-      def tag(response, skip_first = true)
+      def build_result(response, skip_first = true)
         response = doc_to_hash(response).try(:[], "multistatus").try(:[], "response")
         response = [response] if response.is_a? Hash
 
         return [] if response.nil?
 
-        response.each_with_index do |h, index|
+        start_index = skip_first ? 1 : 0
+        result = []
+        response[start_index..-1].each do |h|
 
           prop = h["propstat"].try(:[], 0).try(:[], "prop") || h["propstat"]["prop"]
 
@@ -80,19 +79,9 @@ module Nextcloud
               user_assignable: prop["user_assignable"] == "false" ? false : true,
               id: prop["id"],
           }
-
-          if skip_first
-            if index == 0
-              @tag = Models::Tag.new(params)
-            else
-              @tag.add(params)
-            end
-          else
-            @tag = [] if @tag.nil?
-            @tag << Models::Tag.new(params.merge(skip_contents: true))
-          end
+          result << Models::Tag.new(params.merge(skip_contents: true))
         end
-        @tag
+        return result
       end
     end
   end

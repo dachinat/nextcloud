@@ -17,5 +17,12 @@ module Nextcloud
     def directory
       Webdav::Directory.new(self)
     end
+
+    # Initiates Tags class
+    #
+    # @return [Object] Tags instance
+    def tags
+      Webdav::Tags.new(self)
+    end
   end
 end
