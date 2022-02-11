@@ -30,10 +30,10 @@ module Nextcloud
     # Initiates Comments class
     #
     # @return [Object] Tags instance
-    def comments(scope)
-      Webdav::Comments.new(self, scope)
+    def comments(scope, id)
+      Webdav::Comments.new(self, scope, id)
     end
 
-    def file_comments; comments('files') end
+    def file_comments(fileid); comments('files', fileid) end
   end
 end

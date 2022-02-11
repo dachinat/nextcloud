@@ -14,27 +14,28 @@ module Nextcloud
 
       # Initializes a Tags API
       #
-      # @params args [Hash] Hash with url, username and password
-      def initialize(api, scope)
+      # @param api [Api] Api instance to use
+      # @param scope [String] object type to work on
+      # @param id [Integer] object's id
+      def initialize(api, scope, id)
         @api = api
         @scope = scope
-        @path = "#{COMMENTS_URL}/#{scope}"
+        @path = "#{COMMENTS_URL}/#{scope}/#{id}"
       end
 
-      # List system tags
+      # List comments on object
       #
       # @return [Object,Hash] Hash of error or instance of Tag model class
-      def list(id)
-        response = @api.request(:report, "#{@path}/#{id}", nil, COMMENT)
+      def list
+        response = @api.request(:report, @path, nil, COMMENT)
         (has_dav_errors(response)) ? has_dav_errors(response) : build_result(response)
       end
 
       # Add comment
       #
-      # @param id [Integer] the object ID to add comment to
       # @param message [String] the comment message
       # @return [Hash] Returns status
-      def add(id, message)
+      def add(message)
         body = {
           actorId: @api.username,
           actorType: "users",
@@ -42,28 +43,26 @@ module Nextcloud
           objectType: @scope,
           verb: "comment"
         }.to_json
-        response = @api.request(:post, "#{@path}/#{id}", nil, body, nil, nil, false, 'application/json')
+        response = @api.request(:post, @path, nil, body, nil, nil, false, 'application/json')
         parse_dav_response(response)
       end
 
       # Modify comment
       #
-      # @param id [Integer] the object ID to modify comment on
       # @param comment_id [Integer] id of comment to modify
       # @param message [String] the new comment message
       # @return [Hash] Returns status
-      def modify(id, comment_id, message)
-        response = @api.request(:proppatch, "#{@path}/#{id}/#{comment_id}", nil, MODIFY_COMMENT(message)) #, nil, nil, false, 'application/json')
+      def modify(comment_id, message)
+        response = @api.request(:proppatch, "#{@path}/#{comment_id}", nil, MODIFY_COMMENT(message))
         parse_dav_response(response)
       end
 
       # Delete a tag
       #
-      # @param id [Integer] the object ID to remove comment from
       # @param tag_id [Integer] id of comment to remove
       # @return [Hash] Returns status
-      def remove(id, comment_id)
-        response = @api.request(:delete, "#{@path}/#{id}/#{comment_id}")
+      def remove(comment_id)
+        response = @api.request(:delete, "#{@path}/#{comment_id}")
         parse_dav_response(response)
       end
 
