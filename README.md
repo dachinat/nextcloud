@@ -679,11 +679,17 @@ webdav.directory.favorites("/")
 #### Add comment to file
 First you'll need to acquire the required file's ID through the directory API, see above.
 ```
-webdav.comments('files').add(fileid, 'some comment')
+webdav.comments('files', fileid).add('some comment')
 ```
 or, for short
 ```
-webdav.file_comments.add(fileid, 'some comment')
+webdav.file_comments(fileid).add('some comment')
+```
+
+#### List comments on file
+
+```
+webdav.file_comments(fileid).list
 ```
 Will return an array of instances of Comment model with information about the comments. Of most interest
 should be the following attributes:
@@ -693,22 +699,16 @@ should be the following attributes:
 - `actor_display_name`
 - `creation_datetime`
 
-#### List comments on file
-
-```
-webdav.file_comments.list(fileid)
-```
-
 #### Modify an existing comment
 
 ```
-webdav.file_comments.modify(fileid, comment_id, 'the new comment message')
+webdav.file_comments(fileid).modify(comment_id, 'the new comment message')
 ```
 
 #### Remove a comment
 
 ```
-webdav.file_comments.remove(fileid, comment_id)
+webdav.file_comments(fileid).remove(comment_id)
 ```
 
 ### Tags API
