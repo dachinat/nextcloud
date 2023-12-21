@@ -1,3 +1,4 @@
+require "nokogiri"
 require "open-uri"
 
 RSpec.describe Nextcloud::Ocs::FileSharingApi do
@@ -47,7 +48,7 @@ RSpec.describe Nextcloud::Ocs::FileSharingApi do
       result = @subject.create("/some_file2.txt", 3, nil, nil, "somePassword1_")
       expect(result.share_url).to eq("https://cloud.testdomain.com/s/ShXdLVSmHvDF3kS")
       url = @subject.specific("/some_file2.txt")[0]["url"]
-      expect(open(url).read).to match("password-protected")
+      expect(URI.parse(url).open.read).to match("password-protected")
     end
   end
 

@@ -67,7 +67,7 @@ module Nextcloud
       # @return [Array] Contents array
       def add(args)
         @contents = [] if @contents.nil?
-        @contents << self.class.new(args.merge(skip_contents: true))
+        @contents << self.class.new(**args.merge(skip_contents: true))
       end
     end
   end

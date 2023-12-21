@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/dachinat/nextcloud"
   spec.license       = "MIT"
 
+  spec.required_ruby_version = ">= 3.1.3"
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
@@ -31,15 +32,15 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "activesupport", ">= 5.1", "<= 6.1"
-  spec.add_runtime_dependency "json", "~> 2.1"
-  spec.add_runtime_dependency "nokogiri", "~> 1.8"
-  spec.add_runtime_dependency "net-http-report", "~> 0.1"
+  spec.add_runtime_dependency "activesupport", ">= 5.0", "< 7.2"
+  spec.add_runtime_dependency "json", "~> 2.7.1"
+  spec.add_runtime_dependency "nokogiri", "~> 1.15"
+  spec.add_runtime_dependency "net-http-report", "~> 0.3"
 
-  spec.add_development_dependency "bundler", "~> 1.16"
-  spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "rubocop", "~> 0.51"
-  spec.add_development_dependency "vcr", "~> 3.0"
-  spec.add_development_dependency "webmock", "~> 3.1"
+  spec.add_development_dependency "bundler", "~> 2.3"
+  spec.add_development_dependency "rake", "~> 13.1" #
+  spec.add_development_dependency "rspec", "~> 3.12.0"
+  spec.add_development_dependency "rubocop", "~> 1.59"
+  spec.add_development_dependency "vcr", "~> 6.2"
+  spec.add_development_dependency "webmock", "~> 3.19"
 end
