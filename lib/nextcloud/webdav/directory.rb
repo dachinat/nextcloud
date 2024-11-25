@@ -67,7 +67,10 @@ module Nextcloud
       # @param path [String] Path of new upload
       # @return contents [Hash] Returns status
       def upload(path, contents)
-        response = @api.request(:put, "#{@path}/#{path}", nil, contents)
+        # Encode the path to handle spaces and other special characters
+        encoded_path = ERB::Util.url_encode(path)
+
+        response = @api.request(:put, "#{@path}/#{encoded_path}", nil, contents)
         parse_dav_response(response)
       end
 
