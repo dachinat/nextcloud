@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "activesupport", ">= 5.0", "< 7.2"
+  spec.add_runtime_dependency "activesupport", ">= 5.0", "< 8.1"
   spec.add_runtime_dependency "json", "~> 2.7.1"
   spec.add_runtime_dependency "nokogiri", "~> 1.15"
   spec.add_runtime_dependency "net-http-report", "~> 0.3"
